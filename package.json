@@ -1,0 +1,15 @@
+{
+  "name": "affect-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "dependencies": {
+    "@improbable-eng/grpc-web": "^0.15.0",
+    "@protobuf-ts/protoc": "^2.2.2",
+    "ts-protoc-gen": "^0.15.0"
+  }
+}
