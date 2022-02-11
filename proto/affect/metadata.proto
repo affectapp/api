@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+import "affect/user.proto";
+
+package affect;
+
+message AuthMetadata {
+    oneof peer_token {
+        EndUserPeerToken end_user = 1;
+        PrivilegedPeerToken privileged = 2;
+        ImpersonatedUserPeerToken impersonated_user = 3;
+        AnonymousPeerToken anonymous = 4;
+    }
+
+    message EndUserPeerToken {
+        string firebase_id_token = 1;
+    }
+
+    message PrivilegedPeerToken {
+        string firebase_id_token = 1;
+        string access_reason = 2;
+    }
+
+    message ImpersonatedUserPeerToken {
+        string firebase_id_token = 1;
+        UserId user_id = 2;
+    }
+
+    message AnonymousPeerToken {
+
+    }
+}
