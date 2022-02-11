@@ -1,6 +1,6 @@
 [package]
 edition = "2021"
-name = "affect_api"
+name = "affect-api"
 version = "0.1.0"
 
 [dependencies]
