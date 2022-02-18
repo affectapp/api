@@ -1,6 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.user_pb_service = exports.user_pb = exports.metadata_pb = void 0;
-exports.metadata_pb = require("../dist/generated/affect/metadata_pb");
-exports.user_pb = require("../dist/generated/affect/user_pb");
-exports.user_pb_service = require("../dist/generated/affect/user_pb_service");
+exports.affect = void 0;
+const metadata_pb = require("../dist/generated/affect/metadata_pb");
+const user_pb = require("../dist/generated/affect/user_pb");
+const user_pb_service = require("../dist/generated/affect/user_pb_service");
+var affect;
+(function (affect) {
+    metadata_pb;
+    user_pb;
+    user_pb_service;
+})(affect = exports.affect || (exports.affect = {}));

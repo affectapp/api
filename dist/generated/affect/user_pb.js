@@ -25,6 +25,7 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.affect.CreateUserRequest', null, global);
 goog.exportSymbol('proto.affect.GetUserRequest', null, global);
+goog.exportSymbol('proto.affect.GetUserRequest.IdentifierCase', null, global);
 goog.exportSymbol('proto.affect.ListUsersRequest', null, global);
 goog.exportSymbol('proto.affect.ListUsersResponse', null, global);
 goog.exportSymbol('proto.affect.User', null, global);
@@ -103,7 +104,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.affect.GetUserRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.affect.GetUserRequest.oneofGroups_);
 };
 goog.inherits(proto.affect.GetUserRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -699,6 +700,32 @@ proto.affect.CreateUserRequest.prototype.setFirebaseIdToken = function(value) {
 
 
 
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.affect.GetUserRequest.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.affect.GetUserRequest.IdentifierCase = {
+  IDENTIFIER_NOT_SET: 0,
+  USER_ID: 1,
+  FIREBASE_USER_ID: 2
+};
+
+/**
+ * @return {proto.affect.GetUserRequest.IdentifierCase}
+ */
+proto.affect.GetUserRequest.prototype.getIdentifierCase = function() {
+  return /** @type {proto.affect.GetUserRequest.IdentifierCase} */(jspb.Message.computeOneofCase(this, proto.affect.GetUserRequest.oneofGroups_[0]));
+};
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -730,7 +757,8 @@ proto.affect.GetUserRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.affect.GetUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: (f = msg.getUserId()) && proto.affect.UserId.toObject(includeInstance, f)
+    userId: (f = msg.getUserId()) && proto.affect.UserId.toObject(includeInstance, f),
+    firebaseUserId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -772,6 +800,10 @@ proto.affect.GetUserRequest.deserializeBinaryFromReader = function(msg, reader) 
       reader.readMessage(value,proto.affect.UserId.deserializeBinaryFromReader);
       msg.setUserId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFirebaseUserId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -809,6 +841,13 @@ proto.affect.GetUserRequest.serializeBinaryToWriter = function(message, writer) 
       proto.affect.UserId.serializeBinaryToWriter
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -827,7 +866,7 @@ proto.affect.GetUserRequest.prototype.getUserId = function() {
  * @return {!proto.affect.GetUserRequest} returns this
 */
 proto.affect.GetUserRequest.prototype.setUserId = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setOneofWrapperField(this, 1, proto.affect.GetUserRequest.oneofGroups_[0], value);
 };
 
 
@@ -846,6 +885,42 @@ proto.affect.GetUserRequest.prototype.clearUserId = function() {
  */
 proto.affect.GetUserRequest.prototype.hasUserId = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string firebase_user_id = 2;
+ * @return {string}
+ */
+proto.affect.GetUserRequest.prototype.getFirebaseUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.affect.GetUserRequest} returns this
+ */
+proto.affect.GetUserRequest.prototype.setFirebaseUserId = function(value) {
+  return jspb.Message.setOneofField(this, 2, proto.affect.GetUserRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.affect.GetUserRequest} returns this
+ */
+proto.affect.GetUserRequest.prototype.clearFirebaseUserId = function() {
+  return jspb.Message.setOneofField(this, 2, proto.affect.GetUserRequest.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.affect.GetUserRequest.prototype.hasFirebaseUserId = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

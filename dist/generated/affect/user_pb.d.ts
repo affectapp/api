@@ -88,6 +88,12 @@ export class GetUserRequest extends jspb.Message {
   getUserId(): UserId | undefined;
   setUserId(value?: UserId): void;
 
+  hasFirebaseUserId(): boolean;
+  clearFirebaseUserId(): void;
+  getFirebaseUserId(): string;
+  setFirebaseUserId(value: string): void;
+
+  getIdentifierCase(): GetUserRequest.IdentifierCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserRequest): GetUserRequest.AsObject;
@@ -101,6 +107,13 @@ export class GetUserRequest extends jspb.Message {
 export namespace GetUserRequest {
   export type AsObject = {
     userId?: UserId.AsObject,
+    firebaseUserId: string,
+  }
+
+  export enum IdentifierCase {
+    IDENTIFIER_NOT_SET = 0,
+    USER_ID = 1,
+    FIREBASE_USER_ID = 2,
   }
 }
 

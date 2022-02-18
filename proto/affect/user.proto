@@ -32,7 +32,10 @@ message CreateUserRequest {
 
 message GetUserRequest {
     // The identifier of the user to get.
-    UserId user_id = 1;
+    oneof identifier {
+        UserId user_id = 1;
+        string firebase_user_id = 2;
+    }
 }
 
 message ListUsersRequest {
