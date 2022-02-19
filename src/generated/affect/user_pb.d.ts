@@ -1,18 +1,15 @@
-// package: affect
-// file: affect/user.proto
+import * as jspb from 'google-protobuf'
 
-import * as jspb from "google-protobuf";
-import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
+
 
 export class UserId extends jspb.Message {
   getValue(): string;
-  setValue(value: string): void;
+  setValue(value: string): UserId;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserId.AsObject;
   static toObject(includeInstance: boolean, msg: UserId): UserId.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: UserId, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): UserId;
   static deserializeBinaryFromReader(message: UserId, reader: jspb.BinaryReader): UserId;
@@ -25,29 +22,27 @@ export namespace UserId {
 }
 
 export class User extends jspb.Message {
-  hasUserId(): boolean;
-  clearUserId(): void;
   getUserId(): UserId | undefined;
-  setUserId(value?: UserId): void;
+  setUserId(value?: UserId): User;
+  hasUserId(): boolean;
+  clearUserId(): User;
 
-  hasCreateTime(): boolean;
-  clearCreateTime(): void;
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): User;
+  hasCreateTime(): boolean;
+  clearCreateTime(): User;
 
-  hasUpdateTime(): boolean;
-  clearUpdateTime(): void;
   getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): User;
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): User;
 
   getFirebaseUid(): string;
-  setFirebaseUid(value: string): void;
+  setFirebaseUid(value: string): User;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): User.AsObject;
   static toObject(includeInstance: boolean, msg: User): User.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: User, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): User;
   static deserializeBinaryFromReader(message: User, reader: jspb.BinaryReader): User;
@@ -64,13 +59,11 @@ export namespace User {
 
 export class CreateUserRequest extends jspb.Message {
   getFirebaseIdToken(): string;
-  setFirebaseIdToken(value: string): void;
+  setFirebaseIdToken(value: string): CreateUserRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateUserRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateUserRequest): CreateUserRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: CreateUserRequest, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): CreateUserRequest;
   static deserializeBinaryFromReader(message: CreateUserRequest, reader: jspb.BinaryReader): CreateUserRequest;
@@ -83,22 +76,19 @@ export namespace CreateUserRequest {
 }
 
 export class GetUserRequest extends jspb.Message {
-  hasUserId(): boolean;
-  clearUserId(): void;
   getUserId(): UserId | undefined;
-  setUserId(value?: UserId): void;
+  setUserId(value?: UserId): GetUserRequest;
+  hasUserId(): boolean;
+  clearUserId(): GetUserRequest;
 
-  hasFirebaseUserId(): boolean;
-  clearFirebaseUserId(): void;
   getFirebaseUserId(): string;
-  setFirebaseUserId(value: string): void;
+  setFirebaseUserId(value: string): GetUserRequest;
 
   getIdentifierCase(): GetUserRequest.IdentifierCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserRequest): GetUserRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: GetUserRequest, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): GetUserRequest;
   static deserializeBinaryFromReader(message: GetUserRequest, reader: jspb.BinaryReader): GetUserRequest;
@@ -110,7 +100,7 @@ export namespace GetUserRequest {
     firebaseUserId: string,
   }
 
-  export enum IdentifierCase {
+  export enum IdentifierCase { 
     IDENTIFIER_NOT_SET = 0,
     USER_ID = 1,
     FIREBASE_USER_ID = 2,
@@ -119,16 +109,14 @@ export namespace GetUserRequest {
 
 export class ListUsersRequest extends jspb.Message {
   getPageSize(): number;
-  setPageSize(value: number): void;
+  setPageSize(value: number): ListUsersRequest;
 
   getPageToken(): string;
-  setPageToken(value: string): void;
+  setPageToken(value: string): ListUsersRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUsersRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListUsersRequest): ListUsersRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: ListUsersRequest, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): ListUsersRequest;
   static deserializeBinaryFromReader(message: ListUsersRequest, reader: jspb.BinaryReader): ListUsersRequest;
@@ -142,22 +130,20 @@ export namespace ListUsersRequest {
 }
 
 export class ListUsersResponse extends jspb.Message {
-  clearUsersList(): void;
   getUsersList(): Array<User>;
-  setUsersList(value: Array<User>): void;
+  setUsersList(value: Array<User>): ListUsersResponse;
+  clearUsersList(): ListUsersResponse;
   addUsers(value?: User, index?: number): User;
 
   getNextPageToken(): string;
-  setNextPageToken(value: string): void;
+  setNextPageToken(value: string): ListUsersResponse;
 
   getTotalCount(): number;
-  setTotalCount(value: number): void;
+  setTotalCount(value: number): ListUsersResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUsersResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListUsersResponse): ListUsersResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: ListUsersResponse, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): ListUsersResponse;
   static deserializeBinaryFromReader(message: ListUsersResponse, reader: jspb.BinaryReader): ListUsersResponse;

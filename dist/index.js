@@ -5,7 +5,7 @@ const affect = require("./affect");
 // Bundles Affect services into one.
 class AffectApi {
     constructor(serviceHost, options) {
-        this.user = new affect.user_pb_service.UserServiceClient(serviceHost, options);
+        this.user = new affect.UserServiceClient(serviceHost, null, options);
     }
 }
 exports.default = AffectApi;

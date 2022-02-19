@@ -1,3 +1,3 @@
-export * as metadata_pb from "../dist/generated/affect/metadata_pb";
-export * as user_pb from "../dist/generated/affect/user_pb";
-export * as user_pb_service from "../dist/generated/affect/user_pb_service";
+export * as metadata_pb from "./generated/affect/metadata_pb";
+export * as user_pb from "./generated/affect/user_pb";
+export { UserServiceClient } from "./generated/affect/UserServiceClientPb";

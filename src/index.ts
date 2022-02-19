@@ -1,13 +1,13 @@
 
-import { RpcOptions } from "@improbable-eng/grpc-web/dist/typings/client";
 import * as affect from "./affect";
+import { GrpcWebClientBaseOptions } from "grpc-web";
 
 // Bundles Affect services into one.
 export default class AffectApi {
-  user: affect.user_pb_service.UserServiceClient;
+  user: affect.UserServiceClient;
 
-  constructor(serviceHost: string, options?: RpcOptions) {
-    this.user = new affect.user_pb_service.UserServiceClient(serviceHost, options);
+  constructor(serviceHost: string, options?: GrpcWebClientBaseOptions) {
+    this.user = new affect.UserServiceClient(serviceHost, null, options);
   }
 }
 
