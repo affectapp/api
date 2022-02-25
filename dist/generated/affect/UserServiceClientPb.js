@@ -4,22 +4,22 @@
  * @enhanceable
  * @public
  */
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.UserServiceClient = void 0;
 // GENERATED CODE -- DO NOT EDIT!
 /* eslint-disable */
 // @ts-nocheck
-const grpcWeb = require("grpc-web");
-const affect_user_pb = require("../affect/user_pb");
-class UserServiceClient {
-    constructor(hostname, credentials, options) {
-        this.methodInfoCreateUser = new grpcWeb.MethodDescriptor('/affect.UserService/CreateUser', grpcWeb.MethodType.UNARY, affect_user_pb.CreateUserRequest, affect_user_pb.User, (request) => {
+var grpcWeb = require("grpc-web");
+var affect_user_pb = require("../affect/user_pb");
+var UserServiceClient = /** @class */ (function () {
+    function UserServiceClient(hostname, credentials, options) {
+        this.methodInfoCreateUser = new grpcWeb.MethodDescriptor('/affect.UserService/CreateUser', grpcWeb.MethodType.UNARY, affect_user_pb.CreateUserRequest, affect_user_pb.User, function (request) {
             return request.serializeBinary();
         }, affect_user_pb.User.deserializeBinary);
-        this.methodInfoGetUser = new grpcWeb.MethodDescriptor('/affect.UserService/GetUser', grpcWeb.MethodType.UNARY, affect_user_pb.GetUserRequest, affect_user_pb.User, (request) => {
+        this.methodInfoGetUser = new grpcWeb.MethodDescriptor('/affect.UserService/GetUser', grpcWeb.MethodType.UNARY, affect_user_pb.GetUserRequest, affect_user_pb.User, function (request) {
             return request.serializeBinary();
         }, affect_user_pb.User.deserializeBinary);
-        this.methodInfoListUsers = new grpcWeb.MethodDescriptor('/affect.UserService/ListUsers', grpcWeb.MethodType.UNARY, affect_user_pb.ListUsersRequest, affect_user_pb.ListUsersResponse, (request) => {
+        this.methodInfoListUsers = new grpcWeb.MethodDescriptor('/affect.UserService/ListUsers', grpcWeb.MethodType.UNARY, affect_user_pb.ListUsersRequest, affect_user_pb.ListUsersResponse, function (request) {
             return request.serializeBinary();
         }, affect_user_pb.ListUsersResponse.deserializeBinary);
         if (!options)
@@ -32,29 +32,30 @@ class UserServiceClient {
         this.credentials_ = credentials;
         this.options_ = options;
     }
-    createUser(request, metadata, callback) {
+    UserServiceClient.prototype.createUser = function (request, metadata, callback) {
         if (callback !== undefined) {
             return this.client_.rpcCall(this.hostname_ +
                 '/affect.UserService/CreateUser', request, metadata || {}, this.methodInfoCreateUser, callback);
         }
         return this.client_.unaryCall(this.hostname_ +
             '/affect.UserService/CreateUser', request, metadata || {}, this.methodInfoCreateUser);
-    }
-    getUser(request, metadata, callback) {
+    };
+    UserServiceClient.prototype.getUser = function (request, metadata, callback) {
         if (callback !== undefined) {
             return this.client_.rpcCall(this.hostname_ +
                 '/affect.UserService/GetUser', request, metadata || {}, this.methodInfoGetUser, callback);
         }
         return this.client_.unaryCall(this.hostname_ +
             '/affect.UserService/GetUser', request, metadata || {}, this.methodInfoGetUser);
-    }
-    listUsers(request, metadata, callback) {
+    };
+    UserServiceClient.prototype.listUsers = function (request, metadata, callback) {
         if (callback !== undefined) {
             return this.client_.rpcCall(this.hostname_ +
                 '/affect.UserService/ListUsers', request, metadata || {}, this.methodInfoListUsers, callback);
         }
         return this.client_.unaryCall(this.hostname_ +
             '/affect.UserService/ListUsers', request, metadata || {}, this.methodInfoListUsers);
-    }
-}
+    };
+    return UserServiceClient;
+}());
 exports.UserServiceClient = UserServiceClient;

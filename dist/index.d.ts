@@ -1,7 +1,8 @@
-import * as affect from "./affect";
 import { GrpcWebClientBaseOptions } from "grpc-web";
+import { UserServiceClient } from "./generated/affect/UserServiceClientPb";
 export default class AffectApi {
-    user: affect.UserServiceClient;
+    user: UserServiceClient;
     constructor(serviceHost: string, options?: GrpcWebClientBaseOptions);
 }
-export * as affect from "./affect";
+export * as user_pb from './generated/affect/user_pb';
+export * as metadata_pb from './generated/affect/metadata_pb';
