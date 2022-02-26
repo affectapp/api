@@ -4,6 +4,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let proto_files = [
         "../proto/affect/metadata.proto",
         "../proto/affect/user.proto",
+        "../proto/affect/nonprofit.proto",
     ];
 
     // Rebuild protos if any of the files change.

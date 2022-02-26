@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package affect;
+
+message NonprofitId {
+    string value = 1;
+}
+
+message Nonprofit {
+    // The identifier of the entity.
+    NonprofitId nonprofit_id = 1;
+
+    // The create time of the entity.
+    google.protobuf.Timestamp create_time = 2;
+
+    // The update time of the entity.
+    google.protobuf.Timestamp update_time = 3;
+
+    // Various fields populated from Change:
+    string change_nonprofit_id = 4;
+    string icon_url = 5;
+    string title = 6;
+    string ein = 7;
+    string mission = 8;
+    string category = 9;
+}
+
+message ListNonprofitsRequest {
+    // Optional. The page size, or maximum number of entities that will
+    // be populated in the response. Bounded within the range [10, 100].
+    int32 page_size = 1;
+
+    // Optional. The page token, used to request a specific page.
+    // Leave empty to request the first page.
+    string page_token = 2;
+}
+
+message ListNonprofitsResponse {
+    // Entities in the current page.
+    repeated Nonprofit nonprofits = 1;
+
+    // Optional. The next page token, used to fetch the subsequent
+    // page.
+    string next_page_token = 2;
+    
+    // Total number of entities.
+    int64 total_count = 3;
+}
+
+service NonprofitService {
+    // Returns a paginated list of nonprofits.
+    rpc ListNonprofits(ListNonprofitsRequest) returns (ListNonprofitsResponse) {}
+}

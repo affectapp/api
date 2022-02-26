@@ -9,13 +9,13 @@ message UserId {
 }
 
 message User {
-    // The identifier of the user.
+    // The identifier of the entity.
     UserId user_id = 1;
 
-    // The create time of the user.
+    // The create time of the entity.
     google.protobuf.Timestamp create_time = 2;
 
-    // The update time of the user.
+    // The update time of the entity.
     google.protobuf.Timestamp update_time = 3;
 
     // The firebase UID of the user.
@@ -39,7 +39,7 @@ message GetUserRequest {
 }
 
 message ListUsersRequest {
-    // Optional. The page size, or maximum number of users that will
+    // Optional. The page size, or maximum number of entities that will
     // be populated in the response. Bounded within the range [10, 100].
     int32 page_size = 1;
 
