@@ -21,7 +21,7 @@ message Nonprofit {
     // Various fields populated from Change:
     string change_nonprofit_id = 4;
     string icon_url = 5;
-    string title = 6;
+    string name = 6;
     string ein = 7;
     string mission = 8;
     string category = 9;
