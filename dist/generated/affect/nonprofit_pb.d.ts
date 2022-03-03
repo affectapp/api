@@ -43,8 +43,8 @@ export class Nonprofit extends jspb.Message {
   getIconUrl(): string;
   setIconUrl(value: string): Nonprofit;
 
-  getTitle(): string;
-  setTitle(value: string): Nonprofit;
+  getName(): string;
+  setName(value: string): Nonprofit;
 
   getEin(): string;
   setEin(value: string): Nonprofit;
@@ -70,7 +70,7 @@ export namespace Nonprofit {
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     changeNonprofitId: string,
     iconUrl: string,
-    title: string,
+    name: string,
     ein: string,
     mission: string,
     category: string,

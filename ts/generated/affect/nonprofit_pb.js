@@ -278,7 +278,7 @@ proto.affect.Nonprofit.toObject = function(includeInstance, msg) {
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     changeNonprofitId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     iconUrl: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
     ein: jspb.Message.getFieldWithDefault(msg, 7, ""),
     mission: jspb.Message.getFieldWithDefault(msg, 8, ""),
     category: jspb.Message.getFieldWithDefault(msg, 9, "")
@@ -343,7 +343,7 @@ proto.affect.Nonprofit.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTitle(value);
+      msg.setName(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -424,7 +424,7 @@ proto.affect.Nonprofit.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTitle();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       6,
@@ -603,10 +603,10 @@ proto.affect.Nonprofit.prototype.setIconUrl = function(value) {
 
 
 /**
- * optional string title = 6;
+ * optional string name = 6;
  * @return {string}
  */
-proto.affect.Nonprofit.prototype.getTitle = function() {
+proto.affect.Nonprofit.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -615,7 +615,7 @@ proto.affect.Nonprofit.prototype.getTitle = function() {
  * @param {string} value
  * @return {!proto.affect.Nonprofit} returns this
  */
-proto.affect.Nonprofit.prototype.setTitle = function(value) {
+proto.affect.Nonprofit.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 

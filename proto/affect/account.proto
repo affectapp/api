@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package affect;
+
+message Account {
+    // The identifier of the entity.
+    string account_id = 1;
+
+    // The create time of the entity.
+    google.protobuf.Timestamp create_time = 2;
+
+    // The update time of the entity.
+    google.protobuf.Timestamp update_time = 3;
+
+    // The item that owns this account.
+    string item_id = 4;
+
+    // The name of the account (not necessarily unique).
+    string name = 5;
+
+    // Optional. The mask of the account (usually 2-4 digits).
+    string mask = 6;
+}

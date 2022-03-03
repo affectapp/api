@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "affect/account.proto";
+
+package affect;
+
+message Item {
+    // The identifier of the entity.
+    string item_id = 1;
+
+    // The create time of the entity.
+    google.protobuf.Timestamp create_time = 2;
+
+    // The update time of the entity.
+    google.protobuf.Timestamp update_time = 3;
+
+    // The user that linked this item.
+    string user_id = 4;
+
+    // List of all accounts associated with the item.
+    repeated Account accounts = 5;
+}
+
+message ListItemsRequest {
+    // Optional. The page size, or maximum number of entities that will
+    // be populated in the response. Bounded within the range [10, 100].
+    int32 page_size = 1;
+
+    // Optional. The page token, used to request a specific page.
+    // Leave empty to request the first page.
+    string page_token = 2;
+
+    // The id of the user whose items to list.
+    string user_id = 3;
+}
+
+message ListItemsResponse {
+    // Entities in the current page.
+    repeated Item items = 1;
+
+    // Optional. The next page token, used to fetch the subsequent
+    // page.
+    string next_page_token = 2;
+    
+    // Total number of entities.
+    int64 total_count = 3;
+}
+
+message GenerateLinkTokenRequest {
+    // Nothing needed yet.
+}
+
+message LinkToken {
+    // The token provided to begin the Plaid Link flow.
+    string plaid_link_token = 1;
+
+    // The time the token will expire.
+    google.protobuf.Timestamp expire_time = 3;
+}
+
+message CreateItemRequest {
+    // The public token provided at the end of the Plaid Link flow.
+    string plaid_public_token = 1;
+
+    // The user to associate with the item.
+    string user_id = 2;
+}
+
+service ItemService {
+    // Creates an item link token.
+    rpc GenerateLinkToken(GenerateLinkTokenRequest) returns (LinkToken) {}
+
+    // Creates an item.
+    rpc CreateItem(CreateItemRequest) returns (Item) {}
+
+    // Returns a paginated list of items.
+    rpc ListItems(ListItemsRequest) returns (ListItemsResponse) {}
+}
