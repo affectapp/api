@@ -6,7 +6,7 @@ version = "0.1.0"
 [dependencies]
 prost = "0.9"
 prost-types = "0.9"
-tonic = "0.6"
+tonic = { git = "https://github.com/hyperium/tonic.git", rev = "01e5be5" }
 
 [build-dependencies]
-tonic-build = "0.6"
+tonic-build = { git = "https://github.com/hyperium/tonic.git", rev = "01e5be5" }
