@@ -48,7 +48,8 @@ message ListItemsResponse {
 }
 
 message GenerateLinkTokenRequest {
-    // Nothing needed yet.
+    // The user to associate with the link token.
+    string user_id = 2;
 }
 
 message LinkToken {
