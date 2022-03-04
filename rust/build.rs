@@ -18,7 +18,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let out_dir = PathBuf::from(std::env::var("OUT_DIR")?);
     let file_descriptor = out_dir.join("proto.bin");
     tonic_build::configure()
-        .format(false)
         .file_descriptor_set_path(file_descriptor)
         .compile(&proto_files, &["../proto"])?;
     Ok(())
