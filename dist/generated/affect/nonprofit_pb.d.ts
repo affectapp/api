@@ -3,29 +3,9 @@ import * as jspb from 'google-protobuf'
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 
-export class NonprofitId extends jspb.Message {
-  getValue(): string;
-  setValue(value: string): NonprofitId;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NonprofitId.AsObject;
-  static toObject(includeInstance: boolean, msg: NonprofitId): NonprofitId.AsObject;
-  static serializeBinaryToWriter(message: NonprofitId, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NonprofitId;
-  static deserializeBinaryFromReader(message: NonprofitId, reader: jspb.BinaryReader): NonprofitId;
-}
-
-export namespace NonprofitId {
-  export type AsObject = {
-    value: string,
-  }
-}
-
 export class Nonprofit extends jspb.Message {
-  getNonprofitId(): NonprofitId | undefined;
-  setNonprofitId(value?: NonprofitId): Nonprofit;
-  hasNonprofitId(): boolean;
-  clearNonprofitId(): Nonprofit;
+  getNonprofitId(): string;
+  setNonprofitId(value: string): Nonprofit;
 
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Nonprofit;
@@ -36,9 +16,6 @@ export class Nonprofit extends jspb.Message {
   setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): Nonprofit;
   hasUpdateTime(): boolean;
   clearUpdateTime(): Nonprofit;
-
-  getChangeNonprofitId(): string;
-  setChangeNonprofitId(value: string): Nonprofit;
 
   getIconUrl(): string;
   setIconUrl(value: string): Nonprofit;
@@ -65,15 +42,32 @@ export class Nonprofit extends jspb.Message {
 
 export namespace Nonprofit {
   export type AsObject = {
-    nonprofitId?: NonprofitId.AsObject,
+    nonprofitId: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    changeNonprofitId: string,
     iconUrl: string,
     name: string,
     ein: string,
     mission: string,
     category: string,
+  }
+}
+
+export class GetNonprofitRequest extends jspb.Message {
+  getNonprofitId(): string;
+  setNonprofitId(value: string): GetNonprofitRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetNonprofitRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNonprofitRequest): GetNonprofitRequest.AsObject;
+  static serializeBinaryToWriter(message: GetNonprofitRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNonprofitRequest;
+  static deserializeBinaryFromReader(message: GetNonprofitRequest, reader: jspb.BinaryReader): GetNonprofitRequest;
+}
+
+export namespace GetNonprofitRequest {
+  export type AsObject = {
+    nonprofitId: string,
   }
 }
 

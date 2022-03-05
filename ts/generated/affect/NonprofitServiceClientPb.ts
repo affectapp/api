@@ -35,6 +35,49 @@ export class NonprofitServiceClient {
     this.options_ = options;
   }
 
+  methodInfoGetNonprofit = new grpcWeb.MethodDescriptor(
+    '/affect.NonprofitService/GetNonprofit',
+    grpcWeb.MethodType.UNARY,
+    affect_nonprofit_pb.GetNonprofitRequest,
+    affect_nonprofit_pb.Nonprofit,
+    (request: affect_nonprofit_pb.GetNonprofitRequest) => {
+      return request.serializeBinary();
+    },
+    affect_nonprofit_pb.Nonprofit.deserializeBinary
+  );
+
+  getNonprofit(
+    request: affect_nonprofit_pb.GetNonprofitRequest,
+    metadata: grpcWeb.Metadata | null): Promise<affect_nonprofit_pb.Nonprofit>;
+
+  getNonprofit(
+    request: affect_nonprofit_pb.GetNonprofitRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: affect_nonprofit_pb.Nonprofit) => void): grpcWeb.ClientReadableStream<affect_nonprofit_pb.Nonprofit>;
+
+  getNonprofit(
+    request: affect_nonprofit_pb.GetNonprofitRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: affect_nonprofit_pb.Nonprofit) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/affect.NonprofitService/GetNonprofit',
+        request,
+        metadata || {},
+        this.methodInfoGetNonprofit,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/affect.NonprofitService/GetNonprofit',
+    request,
+    metadata || {},
+    this.methodInfoGetNonprofit);
+  }
+
   methodInfoListNonprofits = new grpcWeb.MethodDescriptor(
     '/affect.NonprofitService/ListNonprofits',
     grpcWeb.MethodType.UNARY,

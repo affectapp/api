@@ -7,6 +7,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "../proto/affect/item.proto",
         "../proto/affect/account.proto",
         "../proto/affect/nonprofit.proto",
+        "../proto/affect/cause.proto",
     ];
 
     // Rebuild protos if any of the files change.

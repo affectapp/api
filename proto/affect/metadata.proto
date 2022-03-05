@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-import "affect/user.proto";
-
 package affect;
 
 message AuthMetadata {
@@ -23,7 +21,7 @@ message AuthMetadata {
 
     message ImpersonatedUserPeerToken {
         string firebase_id_token = 1;
-        UserId user_id = 2;
+        string user_id = 2;
     }
 
     message AnonymousPeerToken {

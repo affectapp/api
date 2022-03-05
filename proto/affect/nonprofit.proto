@@ -4,13 +4,9 @@ import "google/protobuf/timestamp.proto";
 
 package affect;
 
-message NonprofitId {
-    string value = 1;
-}
-
 message Nonprofit {
     // The identifier of the entity.
-    NonprofitId nonprofit_id = 1;
+    string nonprofit_id = 1;
 
     // The create time of the entity.
     google.protobuf.Timestamp create_time = 2;
@@ -18,13 +14,17 @@ message Nonprofit {
     // The update time of the entity.
     google.protobuf.Timestamp update_time = 3;
 
-    // Various fields populated from Change:
-    string change_nonprofit_id = 4;
-    string icon_url = 5;
-    string name = 6;
-    string ein = 7;
-    string mission = 8;
-    string category = 9;
+    // Various fields about the nonprofit.
+    string icon_url = 4;
+    string name = 5;
+    string ein = 6;
+    string mission = 7;
+    string category = 8;
+}
+
+message GetNonprofitRequest {
+    // The id of the nonprofit to request.
+    string nonprofit_id = 1;
 }
 
 message ListNonprofitsRequest {
@@ -50,6 +50,9 @@ message ListNonprofitsResponse {
 }
 
 service NonprofitService {
+    // Returns a specific nonprofit.
+    rpc GetNonprofit(GetNonprofitRequest) returns (Nonprofit) {}
+
     // Returns a paginated list of nonprofits.
     rpc ListNonprofits(ListNonprofitsRequest) returns (ListNonprofitsResponse) {}
 }

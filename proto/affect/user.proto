@@ -4,13 +4,9 @@ import "google/protobuf/timestamp.proto";
 
 package affect;
 
-message UserId {
-    string value = 1;
-}
-
 message User {
     // The identifier of the entity.
-    UserId user_id = 1;
+    string user_id = 1;
 
     // The create time of the entity.
     google.protobuf.Timestamp create_time = 2;
@@ -33,7 +29,7 @@ message CreateUserRequest {
 message GetUserRequest {
     // The identifier of the user to get.
     oneof identifier {
-        UserId user_id = 1;
+        string user_id = 1;
         string firebase_user_id = 2;
     }
 }

@@ -99,6 +99,9 @@ export namespace ListItemsResponse {
 }
 
 export class GenerateLinkTokenRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): GenerateLinkTokenRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenerateLinkTokenRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GenerateLinkTokenRequest): GenerateLinkTokenRequest.AsObject;
@@ -109,6 +112,7 @@ export class GenerateLinkTokenRequest extends jspb.Message {
 
 export namespace GenerateLinkTokenRequest {
   export type AsObject = {
+    userId: string,
   }
 }
 

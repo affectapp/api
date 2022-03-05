@@ -13,6 +13,9 @@ var grpcWeb = require("grpc-web");
 var affect_nonprofit_pb = require("../affect/nonprofit_pb");
 var NonprofitServiceClient = /** @class */ (function () {
     function NonprofitServiceClient(hostname, credentials, options) {
+        this.methodInfoGetNonprofit = new grpcWeb.MethodDescriptor('/affect.NonprofitService/GetNonprofit', grpcWeb.MethodType.UNARY, affect_nonprofit_pb.GetNonprofitRequest, affect_nonprofit_pb.Nonprofit, function (request) {
+            return request.serializeBinary();
+        }, affect_nonprofit_pb.Nonprofit.deserializeBinary);
         this.methodInfoListNonprofits = new grpcWeb.MethodDescriptor('/affect.NonprofitService/ListNonprofits', grpcWeb.MethodType.UNARY, affect_nonprofit_pb.ListNonprofitsRequest, affect_nonprofit_pb.ListNonprofitsResponse, function (request) {
             return request.serializeBinary();
         }, affect_nonprofit_pb.ListNonprofitsResponse.deserializeBinary);
@@ -26,6 +29,14 @@ var NonprofitServiceClient = /** @class */ (function () {
         this.credentials_ = credentials;
         this.options_ = options;
     }
+    NonprofitServiceClient.prototype.getNonprofit = function (request, metadata, callback) {
+        if (callback !== undefined) {
+            return this.client_.rpcCall(this.hostname_ +
+                '/affect.NonprofitService/GetNonprofit', request, metadata || {}, this.methodInfoGetNonprofit, callback);
+        }
+        return this.client_.unaryCall(this.hostname_ +
+            '/affect.NonprofitService/GetNonprofit', request, metadata || {}, this.methodInfoGetNonprofit);
+    };
     NonprofitServiceClient.prototype.listNonprofits = function (request, metadata, callback) {
         if (callback !== undefined) {
             return this.client_.rpcCall(this.hostname_ +

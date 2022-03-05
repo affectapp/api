@@ -21,8 +21,6 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
-var affect_user_pb = require('../affect/user_pb.js');
-goog.object.extend(proto, affect_user_pb);
 goog.exportSymbol('proto.affect.AuthMetadata', null, global);
 goog.exportSymbol('proto.affect.AuthMetadata.AnonymousPeerToken', null, global);
 goog.exportSymbol('proto.affect.AuthMetadata.EndUserPeerToken', null, global);
@@ -641,7 +639,7 @@ proto.affect.AuthMetadata.ImpersonatedUserPeerToken.prototype.toObject = functio
 proto.affect.AuthMetadata.ImpersonatedUserPeerToken.toObject = function(includeInstance, msg) {
   var f, obj = {
     firebaseIdToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userId: (f = msg.getUserId()) && affect_user_pb.UserId.toObject(includeInstance, f)
+    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -683,8 +681,7 @@ proto.affect.AuthMetadata.ImpersonatedUserPeerToken.deserializeBinaryFromReader 
       msg.setFirebaseIdToken(value);
       break;
     case 2:
-      var value = new affect_user_pb.UserId;
-      reader.readMessage(value,affect_user_pb.UserId.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
       break;
     default:
@@ -724,11 +721,10 @@ proto.affect.AuthMetadata.ImpersonatedUserPeerToken.serializeBinaryToWriter = fu
     );
   }
   f = message.getUserId();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       2,
-      f,
-      affect_user_pb.UserId.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -753,39 +749,20 @@ proto.affect.AuthMetadata.ImpersonatedUserPeerToken.prototype.setFirebaseIdToken
 
 
 /**
- * optional UserId user_id = 2;
- * @return {?proto.affect.UserId}
+ * optional string user_id = 2;
+ * @return {string}
  */
 proto.affect.AuthMetadata.ImpersonatedUserPeerToken.prototype.getUserId = function() {
-  return /** @type{?proto.affect.UserId} */ (
-    jspb.Message.getWrapperField(this, affect_user_pb.UserId, 2));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {?proto.affect.UserId|undefined} value
+ * @param {string} value
  * @return {!proto.affect.AuthMetadata.ImpersonatedUserPeerToken} returns this
-*/
+ */
 proto.affect.AuthMetadata.ImpersonatedUserPeerToken.prototype.setUserId = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.affect.AuthMetadata.ImpersonatedUserPeerToken} returns this
- */
-proto.affect.AuthMetadata.ImpersonatedUserPeerToken.prototype.clearUserId = function() {
-  return this.setUserId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.affect.AuthMetadata.ImpersonatedUserPeerToken.prototype.hasUserId = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

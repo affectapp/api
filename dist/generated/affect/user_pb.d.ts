@@ -3,29 +3,9 @@ import * as jspb from 'google-protobuf'
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
 
-export class UserId extends jspb.Message {
-  getValue(): string;
-  setValue(value: string): UserId;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UserId.AsObject;
-  static toObject(includeInstance: boolean, msg: UserId): UserId.AsObject;
-  static serializeBinaryToWriter(message: UserId, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UserId;
-  static deserializeBinaryFromReader(message: UserId, reader: jspb.BinaryReader): UserId;
-}
-
-export namespace UserId {
-  export type AsObject = {
-    value: string,
-  }
-}
-
 export class User extends jspb.Message {
-  getUserId(): UserId | undefined;
-  setUserId(value?: UserId): User;
-  hasUserId(): boolean;
-  clearUserId(): User;
+  getUserId(): string;
+  setUserId(value: string): User;
 
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): User;
@@ -50,7 +30,7 @@ export class User extends jspb.Message {
 
 export namespace User {
   export type AsObject = {
-    userId?: UserId.AsObject,
+    userId: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     firebaseUid: string,
@@ -76,10 +56,8 @@ export namespace CreateUserRequest {
 }
 
 export class GetUserRequest extends jspb.Message {
-  getUserId(): UserId | undefined;
-  setUserId(value?: UserId): GetUserRequest;
-  hasUserId(): boolean;
-  clearUserId(): GetUserRequest;
+  getUserId(): string;
+  setUserId(value: string): GetUserRequest;
 
   getFirebaseUserId(): string;
   setFirebaseUserId(value: string): GetUserRequest;
@@ -96,7 +74,7 @@ export class GetUserRequest extends jspb.Message {
 
 export namespace GetUserRequest {
   export type AsObject = {
-    userId?: UserId.AsObject,
+    userId: string,
     firebaseUserId: string,
   }
 

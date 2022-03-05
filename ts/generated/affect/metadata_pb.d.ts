@@ -1,6 +1,5 @@
 import * as jspb from 'google-protobuf'
 
-import * as affect_user_pb from '../affect/user_pb';
 
 
 export class AuthMetadata extends jspb.Message {
@@ -88,10 +87,8 @@ export namespace AuthMetadata {
     getFirebaseIdToken(): string;
     setFirebaseIdToken(value: string): ImpersonatedUserPeerToken;
 
-    getUserId(): affect_user_pb.UserId | undefined;
-    setUserId(value?: affect_user_pb.UserId): ImpersonatedUserPeerToken;
-    hasUserId(): boolean;
-    clearUserId(): ImpersonatedUserPeerToken;
+    getUserId(): string;
+    setUserId(value: string): ImpersonatedUserPeerToken;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ImpersonatedUserPeerToken.AsObject;
@@ -104,7 +101,7 @@ export namespace AuthMetadata {
   export namespace ImpersonatedUserPeerToken {
     export type AsObject = {
       firebaseIdToken: string,
-      userId?: affect_user_pb.UserId.AsObject,
+      userId: string,
     }
   }
 

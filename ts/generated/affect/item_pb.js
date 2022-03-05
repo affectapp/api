@@ -921,7 +921,7 @@ proto.affect.GenerateLinkTokenRequest.prototype.toObject = function(opt_includeI
  */
 proto.affect.GenerateLinkTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -958,6 +958,10 @@ proto.affect.GenerateLinkTokenRequest.deserializeBinaryFromReader = function(msg
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -987,6 +991,31 @@ proto.affect.GenerateLinkTokenRequest.prototype.serializeBinary = function() {
  */
 proto.affect.GenerateLinkTokenRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string user_id = 2;
+ * @return {string}
+ */
+proto.affect.GenerateLinkTokenRequest.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.affect.GenerateLinkTokenRequest} returns this
+ */
+proto.affect.GenerateLinkTokenRequest.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

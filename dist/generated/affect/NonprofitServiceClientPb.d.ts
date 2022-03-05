@@ -19,6 +19,9 @@ export declare class NonprofitServiceClient {
     }, options?: null | {
         [index: string]: any;
     });
+    methodInfoGetNonprofit: grpcWeb.MethodDescriptor<affect_nonprofit_pb.GetNonprofitRequest, affect_nonprofit_pb.Nonprofit>;
+    getNonprofit(request: affect_nonprofit_pb.GetNonprofitRequest, metadata: grpcWeb.Metadata | null): Promise<affect_nonprofit_pb.Nonprofit>;
+    getNonprofit(request: affect_nonprofit_pb.GetNonprofitRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.RpcError, response: affect_nonprofit_pb.Nonprofit) => void): grpcWeb.ClientReadableStream<affect_nonprofit_pb.Nonprofit>;
     methodInfoListNonprofits: grpcWeb.MethodDescriptor<affect_nonprofit_pb.ListNonprofitsRequest, affect_nonprofit_pb.ListNonprofitsResponse>;
     listNonprofits(request: affect_nonprofit_pb.ListNonprofitsRequest, metadata: grpcWeb.Metadata | null): Promise<affect_nonprofit_pb.ListNonprofitsResponse>;
     listNonprofits(request: affect_nonprofit_pb.ListNonprofitsRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.RpcError, response: affect_nonprofit_pb.ListNonprofitsResponse) => void): grpcWeb.ClientReadableStream<affect_nonprofit_pb.ListNonprofitsResponse>;
