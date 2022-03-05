@@ -45,7 +45,7 @@ message ListCausesRequest {
 
 message ListCausesResponse {
     // Entities in the current page.
-    repeated Cause items = 1;
+    repeated Cause causes = 1;
 
     // Optional. The next page token, used to fetch the subsequent
     // page.

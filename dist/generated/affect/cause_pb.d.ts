@@ -92,10 +92,10 @@ export namespace ListCausesRequest {
 }
 
 export class ListCausesResponse extends jspb.Message {
-  getItemsList(): Array<Cause>;
-  setItemsList(value: Array<Cause>): ListCausesResponse;
-  clearItemsList(): ListCausesResponse;
-  addItems(value?: Cause, index?: number): Cause;
+  getCausesList(): Array<Cause>;
+  setCausesList(value: Array<Cause>): ListCausesResponse;
+  clearCausesList(): ListCausesResponse;
+  addCauses(value?: Cause, index?: number): Cause;
 
   getNextPageToken(): string;
   setNextPageToken(value: string): ListCausesResponse;
@@ -113,7 +113,7 @@ export class ListCausesResponse extends jspb.Message {
 
 export namespace ListCausesResponse {
   export type AsObject = {
-    itemsList: Array<Cause.AsObject>,
+    causesList: Array<Cause.AsObject>,
     nextPageToken: string,
     totalCount: number,
   }

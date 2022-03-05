@@ -844,7 +844,7 @@ proto.affect.ListCausesResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.affect.ListCausesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    causesList: jspb.Message.toObjectList(msg.getCausesList(),
     proto.affect.Cause.toObject, includeInstance),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
     totalCount: jspb.Message.getFieldWithDefault(msg, 3, 0)
@@ -887,7 +887,7 @@ proto.affect.ListCausesResponse.deserializeBinaryFromReader = function(msg, read
     case 1:
       var value = new proto.affect.Cause;
       reader.readMessage(value,proto.affect.Cause.deserializeBinaryFromReader);
-      msg.addItems(value);
+      msg.addCauses(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -926,7 +926,7 @@ proto.affect.ListCausesResponse.prototype.serializeBinary = function() {
  */
 proto.affect.ListCausesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemsList();
+  f = message.getCausesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -952,10 +952,10 @@ proto.affect.ListCausesResponse.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * repeated Cause items = 1;
+ * repeated Cause causes = 1;
  * @return {!Array<!proto.affect.Cause>}
  */
-proto.affect.ListCausesResponse.prototype.getItemsList = function() {
+proto.affect.ListCausesResponse.prototype.getCausesList = function() {
   return /** @type{!Array<!proto.affect.Cause>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.affect.Cause, 1));
 };
@@ -965,7 +965,7 @@ proto.affect.ListCausesResponse.prototype.getItemsList = function() {
  * @param {!Array<!proto.affect.Cause>} value
  * @return {!proto.affect.ListCausesResponse} returns this
 */
-proto.affect.ListCausesResponse.prototype.setItemsList = function(value) {
+proto.affect.ListCausesResponse.prototype.setCausesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -975,7 +975,7 @@ proto.affect.ListCausesResponse.prototype.setItemsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.affect.Cause}
  */
-proto.affect.ListCausesResponse.prototype.addItems = function(opt_value, opt_index) {
+proto.affect.ListCausesResponse.prototype.addCauses = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.affect.Cause, opt_index);
 };
 
@@ -984,8 +984,8 @@ proto.affect.ListCausesResponse.prototype.addItems = function(opt_value, opt_ind
  * Clears the list making it empty but non-null.
  * @return {!proto.affect.ListCausesResponse} returns this
  */
-proto.affect.ListCausesResponse.prototype.clearItemsList = function() {
-  return this.setItemsList([]);
+proto.affect.ListCausesResponse.prototype.clearCausesList = function() {
+  return this.setCausesList([]);
 };
 
 
