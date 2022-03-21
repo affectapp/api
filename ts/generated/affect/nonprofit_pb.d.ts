@@ -78,10 +78,10 @@ export class ListNonprofitsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): ListNonprofitsRequest;
 
-  getSearchFilter(): ListNonprofitsRequest.SearchFilter | undefined;
-  setSearchFilter(value?: ListNonprofitsRequest.SearchFilter): ListNonprofitsRequest;
-  hasSearchFilter(): boolean;
-  clearSearchFilter(): ListNonprofitsRequest;
+  getFilterBySearch(): ListNonprofitsRequest.FilterBySearch | undefined;
+  setFilterBySearch(value?: ListNonprofitsRequest.FilterBySearch): ListNonprofitsRequest;
+  hasFilterBySearch(): boolean;
+  clearFilterBySearch(): ListNonprofitsRequest;
 
   getFilterCase(): ListNonprofitsRequest.FilterCase;
 
@@ -97,67 +97,7 @@ export namespace ListNonprofitsRequest {
   export type AsObject = {
     pageSize: number,
     pageToken: string,
-    searchFilter?: ListNonprofitsRequest.SearchFilter.AsObject,
-  }
-
-  export class SearchFilter extends jspb.Message {
-    getQuery(): string;
-    setQuery(value: string): SearchFilter;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): SearchFilter.AsObject;
-    static toObject(includeInstance: boolean, msg: SearchFilter): SearchFilter.AsObject;
-    static serializeBinaryToWriter(message: SearchFilter, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): SearchFilter;
-    static deserializeBinaryFromReader(message: SearchFilter, reader: jspb.BinaryReader): SearchFilter;
-  }
-
-  export namespace SearchFilter {
-    export type AsObject = {
-      query: string,
-    }
-  }
-
-
-  export enum FilterCase { 
-    FILTER_NOT_SET = 0,
-    SEARCH_FILTER = 3,
-  }
-}
-
-export class ListNonprofitsResponse extends jspb.Message {
-  getNonprofitsList(): Array<Nonprofit>;
-  setNonprofitsList(value: Array<Nonprofit>): ListNonprofitsResponse;
-  clearNonprofitsList(): ListNonprofitsResponse;
-  addNonprofits(value?: Nonprofit, index?: number): Nonprofit;
-
-  getNextPageToken(): string;
-  setNextPageToken(value: string): ListNonprofitsResponse;
-
-  getTotalCount(): number;
-  setTotalCount(value: number): ListNonprofitsResponse;
-
-  getFilterBySearch(): ListNonprofitsResponse.FilterBySearch | undefined;
-  setFilterBySearch(value?: ListNonprofitsResponse.FilterBySearch): ListNonprofitsResponse;
-  hasFilterBySearch(): boolean;
-  clearFilterBySearch(): ListNonprofitsResponse;
-
-  getFilterCase(): ListNonprofitsResponse.FilterCase;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListNonprofitsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListNonprofitsResponse): ListNonprofitsResponse.AsObject;
-  static serializeBinaryToWriter(message: ListNonprofitsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListNonprofitsResponse;
-  static deserializeBinaryFromReader(message: ListNonprofitsResponse, reader: jspb.BinaryReader): ListNonprofitsResponse;
-}
-
-export namespace ListNonprofitsResponse {
-  export type AsObject = {
-    nonprofitsList: Array<Nonprofit.AsObject>,
-    nextPageToken: string,
-    totalCount: number,
-    filterBySearch?: ListNonprofitsResponse.FilterBySearch.AsObject,
+    filterBySearch?: ListNonprofitsRequest.FilterBySearch.AsObject,
   }
 
   export class FilterBySearch extends jspb.Message {
@@ -182,6 +122,34 @@ export namespace ListNonprofitsResponse {
   export enum FilterCase { 
     FILTER_NOT_SET = 0,
     FILTER_BY_SEARCH = 4,
+  }
+}
+
+export class ListNonprofitsResponse extends jspb.Message {
+  getNonprofitsList(): Array<Nonprofit>;
+  setNonprofitsList(value: Array<Nonprofit>): ListNonprofitsResponse;
+  clearNonprofitsList(): ListNonprofitsResponse;
+  addNonprofits(value?: Nonprofit, index?: number): Nonprofit;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListNonprofitsResponse;
+
+  getTotalCount(): number;
+  setTotalCount(value: number): ListNonprofitsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNonprofitsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNonprofitsResponse): ListNonprofitsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListNonprofitsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNonprofitsResponse;
+  static deserializeBinaryFromReader(message: ListNonprofitsResponse, reader: jspb.BinaryReader): ListNonprofitsResponse;
+}
+
+export namespace ListNonprofitsResponse {
+  export type AsObject = {
+    nonprofitsList: Array<Nonprofit.AsObject>,
+    nextPageToken: string,
+    totalCount: number,
   }
 }
 

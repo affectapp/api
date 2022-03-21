@@ -36,12 +36,13 @@ message ListNonprofitsRequest {
     // Leave empty to request the first page.
     string page_token = 2;
 
-    // Optional. Some filter to apply to the list.
+    // Optional. Some filter to apply to the results.
     oneof filter {
-        SearchFilter search_filter = 3;
+        FilterBySearch filter_by_search = 4;
     }
 
-    message SearchFilter {
+    // Filters by some combination of search parameters.
+    message FilterBySearch {
         string query = 1;
     }
 }
@@ -56,15 +57,6 @@ message ListNonprofitsResponse {
     
     // Total number of entities.
     int64 total_count = 3;
-
-    oneof filter {
-        FilterBySearch filter_by_search = 4;
-    }
-
-    // Filters results by some combination of search parameters.
-    message FilterBySearch {
-        string query = 1;
-    }
 }
 
 service NonprofitService {
