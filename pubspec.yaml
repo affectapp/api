@@ -1,0 +1,14 @@
+name: affect_api
+description: Affect API.
+version: 0.0.1
+
+environment:
+  sdk: '>=2.16.0-134.5.beta <3.0.0'
+
+dev_dependencies:
+  lints: ^1.0.0
+dependencies: 
+  fixnum: ^1.0.0
+  grpc: ^3.0.2
+  protobuf: ^2.0.1
+  

@@ -1,2 +1,5 @@
-/target
-/node_modules
+.dart_tool/
+.packages
+build/
+node_modules/
+target/

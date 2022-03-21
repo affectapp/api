@@ -1,0 +1,72 @@
+// syntax = "proto3";
+
+// import "google/protobuf/timestamp.proto";
+// import "google/type/money.proto";
+
+// package affect;
+
+// // Triggers generate one or more donations based on some rules.
+// message Trigger {
+//   // The unique identifier of the entity.
+//   string trigger_id = 1;
+
+//   // The create time of the entity.
+//   google.protobuf.Timestamp create_time = 1;
+  
+//   // The update time of the entity.
+//   google.protobuf.Timestamp update_time = 2;
+
+//   // The cause which this trigger will direct any funds towards.
+//   string cause_id = 3;
+
+//   // The user that owns this recurring donation, and whose funds will be
+//   // used to make the donation.
+//   string user_id = 4;
+
+//   // The rule which describes when the trigger will create a donation,
+//   // and how much the donation will be.
+//   oneof donation_rule {
+//     PeriodicFixedDonationRule periodic_fixed_donation_rule = 5;
+//     PerTransactionDonationRule per_transaction_donation_rule = 6;
+//     OneOffDonationRule one_off_donation_rule = 7;
+//   }
+// }
+
+// // Donates a fixed amount on a regular basis.
+// message PeriodicFixedDonationRule {
+//   // The cron expression representing the frequency of donation.
+//   // e.g. "0 12 * * *" is at noon every day.
+//   // Must not be more frequent than hourly.
+//   string cron_expression = 1;
+
+//   // The amount of money to donate each time (USD).
+//   google.type.Money amount = 2;
+// }
+
+// // Donates some amount per account transaction.
+// message PerTransactionDonationRule {
+//   // The id of the accounts to examine transactions.
+//   repeated string account_id = 1;
+
+//   // Categories to limit matching transactions.
+//   repeated string categories = 2;
+
+//   oneof amount_calculator {
+//     // Donates the amount necessary to round up the matching
+//     // transaction.
+//     bool round_up = 3;
+
+//     // Donates a percentage of the matching transaction.
+//     // Value should be between 1 and 100.
+//     int32 percentage = 4;
+
+//     // Donates this fixed amount (USD).
+//     google.type.Money fixed_amount = 5;
+//   }
+// }
+
+// // Donates a fixed amount one time.
+// message OneOffDonationRule {
+//   // The amount of money to donate as a one-off.
+//   google.type.Money amount = 1;
+// }

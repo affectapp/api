@@ -78,6 +78,13 @@ export class ListNonprofitsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): ListNonprofitsRequest;
 
+  getSearchFilter(): ListNonprofitsRequest.SearchFilter | undefined;
+  setSearchFilter(value?: ListNonprofitsRequest.SearchFilter): ListNonprofitsRequest;
+  hasSearchFilter(): boolean;
+  clearSearchFilter(): ListNonprofitsRequest;
+
+  getFilterCase(): ListNonprofitsRequest.FilterCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListNonprofitsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListNonprofitsRequest): ListNonprofitsRequest.AsObject;
@@ -90,6 +97,31 @@ export namespace ListNonprofitsRequest {
   export type AsObject = {
     pageSize: number,
     pageToken: string,
+    searchFilter?: ListNonprofitsRequest.SearchFilter.AsObject,
+  }
+
+  export class SearchFilter extends jspb.Message {
+    getQuery(): string;
+    setQuery(value: string): SearchFilter;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SearchFilter.AsObject;
+    static toObject(includeInstance: boolean, msg: SearchFilter): SearchFilter.AsObject;
+    static serializeBinaryToWriter(message: SearchFilter, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SearchFilter;
+    static deserializeBinaryFromReader(message: SearchFilter, reader: jspb.BinaryReader): SearchFilter;
+  }
+
+  export namespace SearchFilter {
+    export type AsObject = {
+      query: string,
+    }
+  }
+
+
+  export enum FilterCase { 
+    FILTER_NOT_SET = 0,
+    SEARCH_FILTER = 3,
   }
 }
 
@@ -105,6 +137,13 @@ export class ListNonprofitsResponse extends jspb.Message {
   getTotalCount(): number;
   setTotalCount(value: number): ListNonprofitsResponse;
 
+  getFilterBySearch(): ListNonprofitsResponse.FilterBySearch | undefined;
+  setFilterBySearch(value?: ListNonprofitsResponse.FilterBySearch): ListNonprofitsResponse;
+  hasFilterBySearch(): boolean;
+  clearFilterBySearch(): ListNonprofitsResponse;
+
+  getFilterCase(): ListNonprofitsResponse.FilterCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListNonprofitsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListNonprofitsResponse): ListNonprofitsResponse.AsObject;
@@ -118,6 +157,31 @@ export namespace ListNonprofitsResponse {
     nonprofitsList: Array<Nonprofit.AsObject>,
     nextPageToken: string,
     totalCount: number,
+    filterBySearch?: ListNonprofitsResponse.FilterBySearch.AsObject,
+  }
+
+  export class FilterBySearch extends jspb.Message {
+    getQuery(): string;
+    setQuery(value: string): FilterBySearch;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): FilterBySearch.AsObject;
+    static toObject(includeInstance: boolean, msg: FilterBySearch): FilterBySearch.AsObject;
+    static serializeBinaryToWriter(message: FilterBySearch, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): FilterBySearch;
+    static deserializeBinaryFromReader(message: FilterBySearch, reader: jspb.BinaryReader): FilterBySearch;
+  }
+
+  export namespace FilterBySearch {
+    export type AsObject = {
+      query: string,
+    }
+  }
+
+
+  export enum FilterCase { 
+    FILTER_NOT_SET = 0,
+    FILTER_BY_SEARCH = 4,
   }
 }
 
