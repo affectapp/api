@@ -41,24 +41,24 @@ const ListNonprofitsRequest$json = const {
   '2': const [
     const {'1': 'page_size', '3': 1, '4': 1, '5': 5, '10': 'pageSize'},
     const {'1': 'page_token', '3': 2, '4': 1, '5': 9, '10': 'pageToken'},
-    const {'1': 'search_filter', '3': 3, '4': 1, '5': 11, '6': '.affect.ListNonprofitsRequest.SearchFilter', '9': 0, '10': 'searchFilter'},
+    const {'1': 'filter_by_search', '3': 4, '4': 1, '5': 11, '6': '.affect.ListNonprofitsRequest.FilterBySearch', '9': 0, '10': 'filterBySearch'},
   ],
-  '3': const [ListNonprofitsRequest_SearchFilter$json],
+  '3': const [ListNonprofitsRequest_FilterBySearch$json],
   '8': const [
     const {'1': 'filter'},
   ],
 };
 
 @$core.Deprecated('Use listNonprofitsRequestDescriptor instead')
-const ListNonprofitsRequest_SearchFilter$json = const {
-  '1': 'SearchFilter',
+const ListNonprofitsRequest_FilterBySearch$json = const {
+  '1': 'FilterBySearch',
   '2': const [
     const {'1': 'query', '3': 1, '4': 1, '5': 9, '10': 'query'},
   ],
 };
 
 /// Descriptor for `ListNonprofitsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listNonprofitsRequestDescriptor = $convert.base64Decode('ChVMaXN0Tm9ucHJvZml0c1JlcXVlc3QSGwoJcGFnZV9zaXplGAEgASgFUghwYWdlU2l6ZRIdCgpwYWdlX3Rva2VuGAIgASgJUglwYWdlVG9rZW4SUQoNc2VhcmNoX2ZpbHRlchgDIAEoCzIqLmFmZmVjdC5MaXN0Tm9ucHJvZml0c1JlcXVlc3QuU2VhcmNoRmlsdGVySABSDHNlYXJjaEZpbHRlchokCgxTZWFyY2hGaWx0ZXISFAoFcXVlcnkYASABKAlSBXF1ZXJ5QggKBmZpbHRlcg==');
+final $typed_data.Uint8List listNonprofitsRequestDescriptor = $convert.base64Decode('ChVMaXN0Tm9ucHJvZml0c1JlcXVlc3QSGwoJcGFnZV9zaXplGAEgASgFUghwYWdlU2l6ZRIdCgpwYWdlX3Rva2VuGAIgASgJUglwYWdlVG9rZW4SWAoQZmlsdGVyX2J5X3NlYXJjaBgEIAEoCzIsLmFmZmVjdC5MaXN0Tm9ucHJvZml0c1JlcXVlc3QuRmlsdGVyQnlTZWFyY2hIAFIOZmlsdGVyQnlTZWFyY2gaJgoORmlsdGVyQnlTZWFyY2gSFAoFcXVlcnkYASABKAlSBXF1ZXJ5QggKBmZpbHRlcg==');
 @$core.Deprecated('Use listNonprofitsResponseDescriptor instead')
 const ListNonprofitsResponse$json = const {
   '1': 'ListNonprofitsResponse',

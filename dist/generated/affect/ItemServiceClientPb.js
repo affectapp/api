@@ -11,6 +11,7 @@ exports.ItemServiceClient = void 0;
 // @ts-nocheck
 var grpcWeb = require("grpc-web");
 var affect_item_pb = require("../affect/item_pb");
+var google_protobuf_empty_pb = require("google-protobuf/google/protobuf/empty_pb");
 var ItemServiceClient = /** @class */ (function () {
     function ItemServiceClient(hostname, credentials, options) {
         this.methodInfoGenerateLinkToken = new grpcWeb.MethodDescriptor('/affect.ItemService/GenerateLinkToken', grpcWeb.MethodType.UNARY, affect_item_pb.GenerateLinkTokenRequest, affect_item_pb.LinkToken, function (request) {
@@ -22,6 +23,9 @@ var ItemServiceClient = /** @class */ (function () {
         this.methodInfoListItems = new grpcWeb.MethodDescriptor('/affect.ItemService/ListItems', grpcWeb.MethodType.UNARY, affect_item_pb.ListItemsRequest, affect_item_pb.ListItemsResponse, function (request) {
             return request.serializeBinary();
         }, affect_item_pb.ListItemsResponse.deserializeBinary);
+        this.methodInfoDeleteItem = new grpcWeb.MethodDescriptor('/affect.ItemService/DeleteItem', grpcWeb.MethodType.UNARY, affect_item_pb.DeleteItemRequest, google_protobuf_empty_pb.Empty, function (request) {
+            return request.serializeBinary();
+        }, google_protobuf_empty_pb.Empty.deserializeBinary);
         if (!options)
             options = {};
         if (!credentials)
@@ -55,6 +59,14 @@ var ItemServiceClient = /** @class */ (function () {
         }
         return this.client_.unaryCall(this.hostname_ +
             '/affect.ItemService/ListItems', request, metadata || {}, this.methodInfoListItems);
+    };
+    ItemServiceClient.prototype.deleteItem = function (request, metadata, callback) {
+        if (callback !== undefined) {
+            return this.client_.rpcCall(this.hostname_ +
+                '/affect.ItemService/DeleteItem', request, metadata || {}, this.methodInfoDeleteItem, callback);
+        }
+        return this.client_.unaryCall(this.hostname_ +
+            '/affect.ItemService/DeleteItem', request, metadata || {}, this.methodInfoDeleteItem);
     };
     return ItemServiceClient;
 }());

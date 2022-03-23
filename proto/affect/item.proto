@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
 import "affect/account.proto";
 
 package affect;
@@ -68,6 +69,11 @@ message CreateItemRequest {
     string user_id = 2;
 }
 
+message DeleteItemRequest {
+    // The id of the entity to delete.
+    string item_id = 1;
+}
+
 service ItemService {
     // Creates an item link token.
     rpc GenerateLinkToken(GenerateLinkTokenRequest) returns (LinkToken) {}
@@ -77,4 +83,7 @@ service ItemService {
 
     // Returns a paginated list of items.
     rpc ListItems(ListItemsRequest) returns (ListItemsResponse) {}
+    
+    // Deletes an item, and all associated child entities (e.g. accounts).
+    rpc DeleteItem(DeleteItemRequest) returns (google.protobuf.Empty) {}
 }

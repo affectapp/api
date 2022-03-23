@@ -11,6 +11,7 @@ import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
 import 'item.pb.dart' as $3;
+import '../google/protobuf/empty.pb.dart' as $4;
 export 'item.pb.dart';
 
 class ItemServiceClient extends $grpc.Client {
@@ -29,6 +30,11 @@ class ItemServiceClient extends $grpc.Client {
           ($3.ListItemsRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $3.ListItemsResponse.fromBuffer(value));
+  static final _$deleteItem =
+      $grpc.ClientMethod<$3.DeleteItemRequest, $4.Empty>(
+          '/affect.ItemService/DeleteItem',
+          ($3.DeleteItemRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $4.Empty.fromBuffer(value));
 
   ItemServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -50,6 +56,11 @@ class ItemServiceClient extends $grpc.Client {
       $3.ListItemsRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listItems, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.Empty> deleteItem($3.DeleteItemRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteItem, request, options: options);
   }
 }
 
@@ -79,6 +90,13 @@ abstract class ItemServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.ListItemsRequest.fromBuffer(value),
         ($3.ListItemsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.DeleteItemRequest, $4.Empty>(
+        'DeleteItem',
+        deleteItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.DeleteItemRequest.fromBuffer(value),
+        ($4.Empty value) => value.writeToBuffer()));
   }
 
   $async.Future<$3.LinkToken> generateLinkToken_Pre($grpc.ServiceCall call,
@@ -96,10 +114,17 @@ abstract class ItemServiceBase extends $grpc.Service {
     return listItems(call, await request);
   }
 
+  $async.Future<$4.Empty> deleteItem_Pre($grpc.ServiceCall call,
+      $async.Future<$3.DeleteItemRequest> request) async {
+    return deleteItem(call, await request);
+  }
+
   $async.Future<$3.LinkToken> generateLinkToken(
       $grpc.ServiceCall call, $3.GenerateLinkTokenRequest request);
   $async.Future<$3.Item> createItem(
       $grpc.ServiceCall call, $3.CreateItemRequest request);
   $async.Future<$3.ListItemsResponse> listItems(
       $grpc.ServiceCall call, $3.ListItemsRequest request);
+  $async.Future<$4.Empty> deleteItem(
+      $grpc.ServiceCall call, $3.DeleteItemRequest request);
 }

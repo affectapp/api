@@ -1,6 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 import * as affect_account_pb from '../affect/account_pb';
 
 
@@ -159,6 +160,24 @@ export namespace CreateItemRequest {
   export type AsObject = {
     plaidPublicToken: string,
     userId: string,
+  }
+}
+
+export class DeleteItemRequest extends jspb.Message {
+  getItemId(): string;
+  setItemId(value: string): DeleteItemRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteItemRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteItemRequest): DeleteItemRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteItemRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteItemRequest;
+  static deserializeBinaryFromReader(message: DeleteItemRequest, reader: jspb.BinaryReader): DeleteItemRequest;
+}
+
+export namespace DeleteItemRequest {
+  export type AsObject = {
+    itemId: string,
   }
 }
 

@@ -14,6 +14,7 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as affect_item_pb from '../affect/item_pb';
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 
 
 export class ItemServiceClient {
@@ -162,6 +163,49 @@ export class ItemServiceClient {
     request,
     metadata || {},
     this.methodInfoListItems);
+  }
+
+  methodInfoDeleteItem = new grpcWeb.MethodDescriptor(
+    '/affect.ItemService/DeleteItem',
+    grpcWeb.MethodType.UNARY,
+    affect_item_pb.DeleteItemRequest,
+    google_protobuf_empty_pb.Empty,
+    (request: affect_item_pb.DeleteItemRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  deleteItem(
+    request: affect_item_pb.DeleteItemRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  deleteItem(
+    request: affect_item_pb.DeleteItemRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  deleteItem(
+    request: affect_item_pb.DeleteItemRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/affect.ItemService/DeleteItem',
+        request,
+        metadata || {},
+        this.methodInfoDeleteItem,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/affect.ItemService/DeleteItem',
+    request,
+    metadata || {},
+    this.methodInfoDeleteItem);
   }
 
 }

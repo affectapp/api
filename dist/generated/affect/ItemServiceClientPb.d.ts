@@ -5,6 +5,7 @@
  */
 import * as grpcWeb from 'grpc-web';
 import * as affect_item_pb from '../affect/item_pb';
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 export declare class ItemServiceClient {
     client_: grpcWeb.AbstractClientBase;
     hostname_: string;
@@ -28,4 +29,7 @@ export declare class ItemServiceClient {
     methodInfoListItems: grpcWeb.MethodDescriptor<affect_item_pb.ListItemsRequest, affect_item_pb.ListItemsResponse>;
     listItems(request: affect_item_pb.ListItemsRequest, metadata: grpcWeb.Metadata | null): Promise<affect_item_pb.ListItemsResponse>;
     listItems(request: affect_item_pb.ListItemsRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.RpcError, response: affect_item_pb.ListItemsResponse) => void): grpcWeb.ClientReadableStream<affect_item_pb.ListItemsResponse>;
+    methodInfoDeleteItem: grpcWeb.MethodDescriptor<affect_item_pb.DeleteItemRequest, unknown>;
+    deleteItem(request: affect_item_pb.DeleteItemRequest, metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+    deleteItem(request: affect_item_pb.DeleteItemRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.RpcError, response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 }

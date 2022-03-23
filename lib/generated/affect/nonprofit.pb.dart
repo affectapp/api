@@ -10,13 +10,13 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../google/protobuf/timestamp.pb.dart' as $4;
+import '../google/protobuf/timestamp.pb.dart' as $5;
 
 class Nonprofit extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Nonprofit', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonprofitId')
-    ..aOM<$4.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $4.Timestamp.create)
-    ..aOM<$4.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $4.Timestamp.create)
+    ..aOM<$5.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $5.Timestamp.create)
+    ..aOM<$5.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $5.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'iconUrl')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ein')
@@ -28,8 +28,8 @@ class Nonprofit extends $pb.GeneratedMessage {
   Nonprofit._() : super();
   factory Nonprofit({
     $core.String? nonprofitId,
-    $4.Timestamp? createTime,
-    $4.Timestamp? updateTime,
+    $5.Timestamp? createTime,
+    $5.Timestamp? updateTime,
     $core.String? iconUrl,
     $core.String? name,
     $core.String? ein,
@@ -94,26 +94,26 @@ class Nonprofit extends $pb.GeneratedMessage {
   void clearNonprofitId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $4.Timestamp get createTime => $_getN(1);
+  $5.Timestamp get createTime => $_getN(1);
   @$pb.TagNumber(2)
-  set createTime($4.Timestamp v) { setField(2, v); }
+  set createTime($5.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreateTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreateTime() => clearField(2);
   @$pb.TagNumber(2)
-  $4.Timestamp ensureCreateTime() => $_ensure(1);
+  $5.Timestamp ensureCreateTime() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $4.Timestamp get updateTime => $_getN(2);
+  $5.Timestamp get updateTime => $_getN(2);
   @$pb.TagNumber(3)
-  set updateTime($4.Timestamp v) { setField(3, v); }
+  set updateTime($5.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUpdateTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearUpdateTime() => clearField(3);
   @$pb.TagNumber(3)
-  $4.Timestamp ensureUpdateTime() => $_ensure(2);
+  $5.Timestamp ensureUpdateTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get iconUrl => $_getSZ(3);
@@ -208,14 +208,14 @@ class GetNonprofitRequest extends $pb.GeneratedMessage {
   void clearNonprofitId() => clearField(1);
 }
 
-class ListNonprofitsRequest_SearchFilter extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListNonprofitsRequest.SearchFilter', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
+class ListNonprofitsRequest_FilterBySearch extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListNonprofitsRequest.FilterBySearch', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'query')
     ..hasRequiredFields = false
   ;
 
-  ListNonprofitsRequest_SearchFilter._() : super();
-  factory ListNonprofitsRequest_SearchFilter({
+  ListNonprofitsRequest_FilterBySearch._() : super();
+  factory ListNonprofitsRequest_FilterBySearch({
     $core.String? query,
   }) {
     final _result = create();
@@ -224,26 +224,26 @@ class ListNonprofitsRequest_SearchFilter extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ListNonprofitsRequest_SearchFilter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListNonprofitsRequest_SearchFilter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ListNonprofitsRequest_FilterBySearch.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListNonprofitsRequest_FilterBySearch.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListNonprofitsRequest_SearchFilter clone() => ListNonprofitsRequest_SearchFilter()..mergeFromMessage(this);
+  ListNonprofitsRequest_FilterBySearch clone() => ListNonprofitsRequest_FilterBySearch()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListNonprofitsRequest_SearchFilter copyWith(void Function(ListNonprofitsRequest_SearchFilter) updates) => super.copyWith((message) => updates(message as ListNonprofitsRequest_SearchFilter)) as ListNonprofitsRequest_SearchFilter; // ignore: deprecated_member_use
+  ListNonprofitsRequest_FilterBySearch copyWith(void Function(ListNonprofitsRequest_FilterBySearch) updates) => super.copyWith((message) => updates(message as ListNonprofitsRequest_FilterBySearch)) as ListNonprofitsRequest_FilterBySearch; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ListNonprofitsRequest_SearchFilter create() => ListNonprofitsRequest_SearchFilter._();
-  ListNonprofitsRequest_SearchFilter createEmptyInstance() => create();
-  static $pb.PbList<ListNonprofitsRequest_SearchFilter> createRepeated() => $pb.PbList<ListNonprofitsRequest_SearchFilter>();
+  static ListNonprofitsRequest_FilterBySearch create() => ListNonprofitsRequest_FilterBySearch._();
+  ListNonprofitsRequest_FilterBySearch createEmptyInstance() => create();
+  static $pb.PbList<ListNonprofitsRequest_FilterBySearch> createRepeated() => $pb.PbList<ListNonprofitsRequest_FilterBySearch>();
   @$core.pragma('dart2js:noInline')
-  static ListNonprofitsRequest_SearchFilter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListNonprofitsRequest_SearchFilter>(create);
-  static ListNonprofitsRequest_SearchFilter? _defaultInstance;
+  static ListNonprofitsRequest_FilterBySearch getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListNonprofitsRequest_FilterBySearch>(create);
+  static ListNonprofitsRequest_FilterBySearch? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get query => $_getSZ(0);
@@ -256,20 +256,20 @@ class ListNonprofitsRequest_SearchFilter extends $pb.GeneratedMessage {
 }
 
 enum ListNonprofitsRequest_Filter {
-  searchFilter, 
+  filterBySearch, 
   notSet
 }
 
 class ListNonprofitsRequest extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, ListNonprofitsRequest_Filter> _ListNonprofitsRequest_FilterByTag = {
-    3 : ListNonprofitsRequest_Filter.searchFilter,
+    4 : ListNonprofitsRequest_Filter.filterBySearch,
     0 : ListNonprofitsRequest_Filter.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListNonprofitsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
-    ..oo(0, [3])
+    ..oo(0, [4])
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSize', $pb.PbFieldType.O3)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageToken')
-    ..aOM<ListNonprofitsRequest_SearchFilter>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'searchFilter', subBuilder: ListNonprofitsRequest_SearchFilter.create)
+    ..aOM<ListNonprofitsRequest_FilterBySearch>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filterBySearch', subBuilder: ListNonprofitsRequest_FilterBySearch.create)
     ..hasRequiredFields = false
   ;
 
@@ -277,7 +277,7 @@ class ListNonprofitsRequest extends $pb.GeneratedMessage {
   factory ListNonprofitsRequest({
     $core.int? pageSize,
     $core.String? pageToken,
-    ListNonprofitsRequest_SearchFilter? searchFilter,
+    ListNonprofitsRequest_FilterBySearch? filterBySearch,
   }) {
     final _result = create();
     if (pageSize != null) {
@@ -286,8 +286,8 @@ class ListNonprofitsRequest extends $pb.GeneratedMessage {
     if (pageToken != null) {
       _result.pageToken = pageToken;
     }
-    if (searchFilter != null) {
-      _result.searchFilter = searchFilter;
+    if (filterBySearch != null) {
+      _result.filterBySearch = filterBySearch;
     }
     return _result;
   }
@@ -333,16 +333,16 @@ class ListNonprofitsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPageToken() => clearField(2);
 
-  @$pb.TagNumber(3)
-  ListNonprofitsRequest_SearchFilter get searchFilter => $_getN(2);
-  @$pb.TagNumber(3)
-  set searchFilter(ListNonprofitsRequest_SearchFilter v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasSearchFilter() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearSearchFilter() => clearField(3);
-  @$pb.TagNumber(3)
-  ListNonprofitsRequest_SearchFilter ensureSearchFilter() => $_ensure(2);
+  @$pb.TagNumber(4)
+  ListNonprofitsRequest_FilterBySearch get filterBySearch => $_getN(2);
+  @$pb.TagNumber(4)
+  set filterBySearch(ListNonprofitsRequest_FilterBySearch v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFilterBySearch() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearFilterBySearch() => clearField(4);
+  @$pb.TagNumber(4)
+  ListNonprofitsRequest_FilterBySearch ensureFilterBySearch() => $_ensure(2);
 }
 
 class ListNonprofitsResponse extends $pb.GeneratedMessage {
