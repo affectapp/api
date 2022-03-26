@@ -8,6 +8,7 @@ export 'generated/affect/nonprofit.pb.dart';
 export 'generated/affect/nonprofit.pbgrpc.dart';
 export 'generated/affect/user.pb.dart';
 export 'generated/affect/user.pbgrpc.dart';
+import 'generated/affect/affiliate.pbgrpc.dart';
 
 import 'package:affect_api/affect_api.dart';
 import 'package:grpc/service_api.dart';
@@ -17,9 +18,11 @@ class AffectClient {
       : cause = CauseServiceClient(channel),
         item = ItemServiceClient(channel),
         nonprofit = NonprofitServiceClient(channel),
-        user = UserServiceClient(channel);
+        user = UserServiceClient(channel),
+        affiliate = AffiliateServiceClient(channel);
   CauseServiceClient cause;
   ItemServiceClient item;
   NonprofitServiceClient nonprofit;
   UserServiceClient user;
+  AffiliateServiceClient affiliate;
 }
