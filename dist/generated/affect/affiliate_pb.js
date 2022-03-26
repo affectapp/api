@@ -586,8 +586,9 @@ proto.affect.CreateAffiliateRequest.prototype.setBusinessType = function(value) 
 proto.affect.BusinessType = {
   BUSINESS_TYPE_UNSPECIFIED: 0,
   BUSINESS_TYPE_INDIVIDUAL: 1,
-  BUSINESS_TYPE_NONPROFIT: 2,
-  BUSINESS_TYPE_GOVERNMENT_ENTITY: 3
+  BUSINESS_TYPE_COMPANY: 2,
+  BUSINESS_TYPE_NONPROFIT: 3,
+  BUSINESS_TYPE_GOVERNMENT_ENTITY: 4
 };
 
 goog.object.extend(exports, proto.affect);

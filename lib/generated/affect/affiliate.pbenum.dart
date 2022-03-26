@@ -12,12 +12,14 @@ import 'package:protobuf/protobuf.dart' as $pb;
 class BusinessType extends $pb.ProtobufEnum {
   static const BusinessType BUSINESS_TYPE_UNSPECIFIED = BusinessType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BUSINESS_TYPE_UNSPECIFIED');
   static const BusinessType BUSINESS_TYPE_INDIVIDUAL = BusinessType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BUSINESS_TYPE_INDIVIDUAL');
-  static const BusinessType BUSINESS_TYPE_NONPROFIT = BusinessType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BUSINESS_TYPE_NONPROFIT');
-  static const BusinessType BUSINESS_TYPE_GOVERNMENT_ENTITY = BusinessType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BUSINESS_TYPE_GOVERNMENT_ENTITY');
+  static const BusinessType BUSINESS_TYPE_COMPANY = BusinessType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BUSINESS_TYPE_COMPANY');
+  static const BusinessType BUSINESS_TYPE_NONPROFIT = BusinessType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BUSINESS_TYPE_NONPROFIT');
+  static const BusinessType BUSINESS_TYPE_GOVERNMENT_ENTITY = BusinessType._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BUSINESS_TYPE_GOVERNMENT_ENTITY');
 
   static const $core.List<BusinessType> values = <BusinessType> [
     BUSINESS_TYPE_UNSPECIFIED,
     BUSINESS_TYPE_INDIVIDUAL,
+    BUSINESS_TYPE_COMPANY,
     BUSINESS_TYPE_NONPROFIT,
     BUSINESS_TYPE_GOVERNMENT_ENTITY,
   ];

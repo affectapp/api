@@ -14,13 +14,14 @@ const BusinessType$json = const {
   '2': const [
     const {'1': 'BUSINESS_TYPE_UNSPECIFIED', '2': 0},
     const {'1': 'BUSINESS_TYPE_INDIVIDUAL', '2': 1},
-    const {'1': 'BUSINESS_TYPE_NONPROFIT', '2': 2},
-    const {'1': 'BUSINESS_TYPE_GOVERNMENT_ENTITY', '2': 3},
+    const {'1': 'BUSINESS_TYPE_COMPANY', '2': 2},
+    const {'1': 'BUSINESS_TYPE_NONPROFIT', '2': 3},
+    const {'1': 'BUSINESS_TYPE_GOVERNMENT_ENTITY', '2': 4},
   ],
 };
 
 /// Descriptor for `BusinessType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List businessTypeDescriptor = $convert.base64Decode('CgxCdXNpbmVzc1R5cGUSHQoZQlVTSU5FU1NfVFlQRV9VTlNQRUNJRklFRBAAEhwKGEJVU0lORVNTX1RZUEVfSU5ESVZJRFVBTBABEhsKF0JVU0lORVNTX1RZUEVfTk9OUFJPRklUEAISIwofQlVTSU5FU1NfVFlQRV9HT1ZFUk5NRU5UX0VOVElUWRAD');
+final $typed_data.Uint8List businessTypeDescriptor = $convert.base64Decode('CgxCdXNpbmVzc1R5cGUSHQoZQlVTSU5FU1NfVFlQRV9VTlNQRUNJRklFRBAAEhwKGEJVU0lORVNTX1RZUEVfSU5ESVZJRFVBTBABEhkKFUJVU0lORVNTX1RZUEVfQ09NUEFOWRACEhsKF0JVU0lORVNTX1RZUEVfTk9OUFJPRklUEAMSIwofQlVTSU5FU1NfVFlQRV9HT1ZFUk5NRU5UX0VOVElUWRAE');
 @$core.Deprecated('Use affiliateDescriptor instead')
 const Affiliate$json = const {
   '1': 'Affiliate',
