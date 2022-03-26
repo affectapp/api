@@ -45,6 +45,32 @@ export namespace Affiliate {
   }
 }
 
+export class CreateAffiliateRequest extends jspb.Message {
+  getCompanyName(): string;
+  setCompanyName(value: string): CreateAffiliateRequest;
+
+  getContactEmail(): string;
+  setContactEmail(value: string): CreateAffiliateRequest;
+
+  getBusinessType(): BusinessType;
+  setBusinessType(value: BusinessType): CreateAffiliateRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAffiliateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAffiliateRequest): CreateAffiliateRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateAffiliateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAffiliateRequest;
+  static deserializeBinaryFromReader(message: CreateAffiliateRequest, reader: jspb.BinaryReader): CreateAffiliateRequest;
+}
+
+export namespace CreateAffiliateRequest {
+  export type AsObject = {
+    companyName: string,
+    contactEmail: string,
+    businessType: BusinessType,
+  }
+}
+
 export enum BusinessType { 
   BUSINESS_TYPE_UNSPECIFIED = 0,
   BUSINESS_TYPE_INDIVIDUAL = 1,

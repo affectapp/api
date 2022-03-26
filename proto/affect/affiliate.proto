@@ -25,8 +25,20 @@ message Affiliate {
 }
 
 enum BusinessType {
-  BUSINESS_TYPE_UNSPECIFIED = 0;
-  BUSINESS_TYPE_INDIVIDUAL = 1;
-  BUSINESS_TYPE_NONPROFIT = 2;
-  BUSINESS_TYPE_GOVERNMENT_ENTITY = 3;
+    BUSINESS_TYPE_UNSPECIFIED = 0;
+    BUSINESS_TYPE_INDIVIDUAL = 1;
+    BUSINESS_TYPE_NONPROFIT = 2;
+    BUSINESS_TYPE_GOVERNMENT_ENTITY = 3;
+}
+
+message CreateAffiliateRequest {
+    string company_name = 1;
+    string contact_email = 2;
+    // Currently, only nonprofits are supported.
+    BusinessType business_type = 3;
+}
+
+service AffiliateService {
+    // Creates an affiliate.
+    rpc CreateAffiliate(CreateAffiliateRequest) returns (Affiliate) {}
 }
