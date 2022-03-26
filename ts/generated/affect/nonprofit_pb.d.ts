@@ -1,6 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
+import * as affect_affiliate_pb from '../affect/affiliate_pb';
 
 
 export class Nonprofit extends jspb.Message {
@@ -32,6 +33,11 @@ export class Nonprofit extends jspb.Message {
   getCategory(): string;
   setCategory(value: string): Nonprofit;
 
+  getAffiliate(): affect_affiliate_pb.Affiliate | undefined;
+  setAffiliate(value?: affect_affiliate_pb.Affiliate): Nonprofit;
+  hasAffiliate(): boolean;
+  clearAffiliate(): Nonprofit;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Nonprofit.AsObject;
   static toObject(includeInstance: boolean, msg: Nonprofit): Nonprofit.AsObject;
@@ -50,6 +56,7 @@ export namespace Nonprofit {
     ein: string,
     mission: string,
     category: string,
+    affiliate?: affect_affiliate_pb.Affiliate.AsObject,
   }
 }
 

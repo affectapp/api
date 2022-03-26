@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package affect;
+
+message Affiliate {
+    // The identifier of the entity.
+    string affiliate_id = 1;
+
+    // The create time of the entity.
+    google.protobuf.Timestamp create_time = 2;
+
+    // The update time of the entity.
+    google.protobuf.Timestamp update_time = 3;
+
+    // The name of the affiliate's company.
+    string company_name = 4;
+
+    // The contact email of the affiliate.
+    string contact_email = 5;
+
+    // The business type of the affiliate.
+    BusinessType business_type = 6;
+}
+
+enum BusinessType {
+  BUSINESS_TYPE_UNSPECIFIED = 0;
+  BUSINESS_TYPE_INDIVIDUAL = 1;
+  BUSINESS_TYPE_NONPROFIT = 2;
+  BUSINESS_TYPE_GOVERNMENT_ENTITY = 3;
+}

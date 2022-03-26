@@ -20,11 +20,12 @@ const Nonprofit$json = const {
     const {'1': 'ein', '3': 6, '4': 1, '5': 9, '10': 'ein'},
     const {'1': 'mission', '3': 7, '4': 1, '5': 9, '10': 'mission'},
     const {'1': 'category', '3': 8, '4': 1, '5': 9, '10': 'category'},
+    const {'1': 'affiliate', '3': 9, '4': 1, '5': 11, '6': '.affect.Affiliate', '10': 'affiliate'},
   ],
 };
 
 /// Descriptor for `Nonprofit`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List nonprofitDescriptor = $convert.base64Decode('CglOb25wcm9maXQSIQoMbm9ucHJvZml0X2lkGAEgASgJUgtub25wcm9maXRJZBI7CgtjcmVhdGVfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmNyZWF0ZVRpbWUSOwoLdXBkYXRlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgp1cGRhdGVUaW1lEhkKCGljb25fdXJsGAQgASgJUgdpY29uVXJsEhIKBG5hbWUYBSABKAlSBG5hbWUSEAoDZWluGAYgASgJUgNlaW4SGAoHbWlzc2lvbhgHIAEoCVIHbWlzc2lvbhIaCghjYXRlZ29yeRgIIAEoCVIIY2F0ZWdvcnk=');
+final $typed_data.Uint8List nonprofitDescriptor = $convert.base64Decode('CglOb25wcm9maXQSIQoMbm9ucHJvZml0X2lkGAEgASgJUgtub25wcm9maXRJZBI7CgtjcmVhdGVfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmNyZWF0ZVRpbWUSOwoLdXBkYXRlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgp1cGRhdGVUaW1lEhkKCGljb25fdXJsGAQgASgJUgdpY29uVXJsEhIKBG5hbWUYBSABKAlSBG5hbWUSEAoDZWluGAYgASgJUgNlaW4SGAoHbWlzc2lvbhgHIAEoCVIHbWlzc2lvbhIaCghjYXRlZ29yeRgIIAEoCVIIY2F0ZWdvcnkSLwoJYWZmaWxpYXRlGAkgASgLMhEuYWZmZWN0LkFmZmlsaWF0ZVIJYWZmaWxpYXRl');
 @$core.Deprecated('Use getNonprofitRequestDescriptor instead')
 const GetNonprofitRequest$json = const {
   '1': 'GetNonprofitRequest',

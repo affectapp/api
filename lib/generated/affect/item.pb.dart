@@ -11,7 +11,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../google/protobuf/timestamp.pb.dart' as $5;
-import 'account.pb.dart' as $6;
+import 'account.pb.dart' as $7;
 
 class Item extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Item', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
@@ -19,7 +19,7 @@ class Item extends $pb.GeneratedMessage {
     ..aOM<$5.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $5.Timestamp.create)
     ..aOM<$5.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $5.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
-    ..pc<$6.Account>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accounts', $pb.PbFieldType.PM, subBuilder: $6.Account.create)
+    ..pc<$7.Account>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accounts', $pb.PbFieldType.PM, subBuilder: $7.Account.create)
     ..hasRequiredFields = false
   ;
 
@@ -29,7 +29,7 @@ class Item extends $pb.GeneratedMessage {
     $5.Timestamp? createTime,
     $5.Timestamp? updateTime,
     $core.String? userId,
-    $core.Iterable<$6.Account>? accounts,
+    $core.Iterable<$7.Account>? accounts,
   }) {
     final _result = create();
     if (itemId != null) {
@@ -111,7 +111,7 @@ class Item extends $pb.GeneratedMessage {
   void clearUserId() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$6.Account> get accounts => $_getList(4);
+  $core.List<$7.Account> get accounts => $_getList(4);
 }
 
 class ListItemsRequest extends $pb.GeneratedMessage {

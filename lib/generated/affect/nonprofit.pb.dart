@@ -11,6 +11,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../google/protobuf/timestamp.pb.dart' as $5;
+import 'affiliate.pb.dart' as $6;
 
 class Nonprofit extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Nonprofit', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
@@ -22,6 +23,7 @@ class Nonprofit extends $pb.GeneratedMessage {
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ein')
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mission')
     ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'category')
+    ..aOM<$6.Affiliate>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'affiliate', subBuilder: $6.Affiliate.create)
     ..hasRequiredFields = false
   ;
 
@@ -35,6 +37,7 @@ class Nonprofit extends $pb.GeneratedMessage {
     $core.String? ein,
     $core.String? mission,
     $core.String? category,
+    $6.Affiliate? affiliate,
   }) {
     final _result = create();
     if (nonprofitId != null) {
@@ -60,6 +63,9 @@ class Nonprofit extends $pb.GeneratedMessage {
     }
     if (category != null) {
       _result.category = category;
+    }
+    if (affiliate != null) {
+      _result.affiliate = affiliate;
     }
     return _result;
   }
@@ -159,6 +165,17 @@ class Nonprofit extends $pb.GeneratedMessage {
   $core.bool hasCategory() => $_has(7);
   @$pb.TagNumber(8)
   void clearCategory() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $6.Affiliate get affiliate => $_getN(8);
+  @$pb.TagNumber(9)
+  set affiliate($6.Affiliate v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasAffiliate() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAffiliate() => clearField(9);
+  @$pb.TagNumber(9)
+  $6.Affiliate ensureAffiliate() => $_ensure(8);
 }
 
 class GetNonprofitRequest extends $pb.GeneratedMessage {
