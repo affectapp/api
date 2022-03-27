@@ -30,3 +30,20 @@ class BusinessType extends $pb.ProtobufEnum {
   const BusinessType._($core.int v, $core.String n) : super(v, n);
 }
 
+class AffiliateLinkType extends $pb.ProtobufEnum {
+  static const AffiliateLinkType AFFILIATE_LINK_TYPE_UNSPECIFIED = AffiliateLinkType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AFFILIATE_LINK_TYPE_UNSPECIFIED');
+  static const AffiliateLinkType AFFILIATE_LINK_TYPE_ONBOARDING = AffiliateLinkType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AFFILIATE_LINK_TYPE_ONBOARDING');
+  static const AffiliateLinkType AFFILIATE_LINK_TYPE_LOGIN = AffiliateLinkType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AFFILIATE_LINK_TYPE_LOGIN');
+
+  static const $core.List<AffiliateLinkType> values = <AffiliateLinkType> [
+    AFFILIATE_LINK_TYPE_UNSPECIFIED,
+    AFFILIATE_LINK_TYPE_ONBOARDING,
+    AFFILIATE_LINK_TYPE_LOGIN,
+  ];
+
+  static final $core.Map<$core.int, AffiliateLinkType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AffiliateLinkType? valueOf($core.int value) => _byValue[value];
+
+  const AffiliateLinkType._($core.int v, $core.String n) : super(v, n);
+}
+

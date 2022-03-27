@@ -71,10 +71,65 @@ export namespace CreateAffiliateRequest {
   }
 }
 
+export class GenerateAffiliateLinkRequest extends jspb.Message {
+  getAffiliateId(): string;
+  setAffiliateId(value: string): GenerateAffiliateLinkRequest;
+
+  getType(): AffiliateLinkType;
+  setType(value: AffiliateLinkType): GenerateAffiliateLinkRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateAffiliateLinkRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateAffiliateLinkRequest): GenerateAffiliateLinkRequest.AsObject;
+  static serializeBinaryToWriter(message: GenerateAffiliateLinkRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateAffiliateLinkRequest;
+  static deserializeBinaryFromReader(message: GenerateAffiliateLinkRequest, reader: jspb.BinaryReader): GenerateAffiliateLinkRequest;
+}
+
+export namespace GenerateAffiliateLinkRequest {
+  export type AsObject = {
+    affiliateId: string,
+    type: AffiliateLinkType,
+  }
+}
+
+export class AffiliateLink extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): AffiliateLink;
+
+  getType(): AffiliateLinkType;
+  setType(value: AffiliateLinkType): AffiliateLink;
+
+  getExpireTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpireTime(value?: google_protobuf_timestamp_pb.Timestamp): AffiliateLink;
+  hasExpireTime(): boolean;
+  clearExpireTime(): AffiliateLink;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AffiliateLink.AsObject;
+  static toObject(includeInstance: boolean, msg: AffiliateLink): AffiliateLink.AsObject;
+  static serializeBinaryToWriter(message: AffiliateLink, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AffiliateLink;
+  static deserializeBinaryFromReader(message: AffiliateLink, reader: jspb.BinaryReader): AffiliateLink;
+}
+
+export namespace AffiliateLink {
+  export type AsObject = {
+    url: string,
+    type: AffiliateLinkType,
+    expireTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export enum BusinessType { 
   BUSINESS_TYPE_UNSPECIFIED = 0,
   BUSINESS_TYPE_INDIVIDUAL = 1,
   BUSINESS_TYPE_COMPANY = 2,
   BUSINESS_TYPE_NONPROFIT = 3,
   BUSINESS_TYPE_GOVERNMENT_ENTITY = 4,
+}
+export enum AffiliateLinkType { 
+  AFFILIATE_LINK_TYPE_UNSPECIFIED = 0,
+  AFFILIATE_LINK_TYPE_ONBOARDING = 1,
+  AFFILIATE_LINK_TYPE_LOGIN = 2,
 }

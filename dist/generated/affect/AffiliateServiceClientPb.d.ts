@@ -22,4 +22,7 @@ export declare class AffiliateServiceClient {
     methodInfoCreateAffiliate: grpcWeb.MethodDescriptor<affect_affiliate_pb.CreateAffiliateRequest, affect_affiliate_pb.Affiliate>;
     createAffiliate(request: affect_affiliate_pb.CreateAffiliateRequest, metadata: grpcWeb.Metadata | null): Promise<affect_affiliate_pb.Affiliate>;
     createAffiliate(request: affect_affiliate_pb.CreateAffiliateRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.RpcError, response: affect_affiliate_pb.Affiliate) => void): grpcWeb.ClientReadableStream<affect_affiliate_pb.Affiliate>;
+    methodInfoGenerateAffiliateLink: grpcWeb.MethodDescriptor<affect_affiliate_pb.GenerateAffiliateLinkRequest, affect_affiliate_pb.AffiliateLink>;
+    generateAffiliateLink(request: affect_affiliate_pb.GenerateAffiliateLinkRequest, metadata: grpcWeb.Metadata | null): Promise<affect_affiliate_pb.AffiliateLink>;
+    generateAffiliateLink(request: affect_affiliate_pb.GenerateAffiliateLinkRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.RpcError, response: affect_affiliate_pb.AffiliateLink) => void): grpcWeb.ClientReadableStream<affect_affiliate_pb.AffiliateLink>;
 }

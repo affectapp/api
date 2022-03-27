@@ -22,6 +22,18 @@ const BusinessType$json = const {
 
 /// Descriptor for `BusinessType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List businessTypeDescriptor = $convert.base64Decode('CgxCdXNpbmVzc1R5cGUSHQoZQlVTSU5FU1NfVFlQRV9VTlNQRUNJRklFRBAAEhwKGEJVU0lORVNTX1RZUEVfSU5ESVZJRFVBTBABEhkKFUJVU0lORVNTX1RZUEVfQ09NUEFOWRACEhsKF0JVU0lORVNTX1RZUEVfTk9OUFJPRklUEAMSIwofQlVTSU5FU1NfVFlQRV9HT1ZFUk5NRU5UX0VOVElUWRAE');
+@$core.Deprecated('Use affiliateLinkTypeDescriptor instead')
+const AffiliateLinkType$json = const {
+  '1': 'AffiliateLinkType',
+  '2': const [
+    const {'1': 'AFFILIATE_LINK_TYPE_UNSPECIFIED', '2': 0},
+    const {'1': 'AFFILIATE_LINK_TYPE_ONBOARDING', '2': 1},
+    const {'1': 'AFFILIATE_LINK_TYPE_LOGIN', '2': 2},
+  ],
+};
+
+/// Descriptor for `AffiliateLinkType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List affiliateLinkTypeDescriptor = $convert.base64Decode('ChFBZmZpbGlhdGVMaW5rVHlwZRIjCh9BRkZJTElBVEVfTElOS19UWVBFX1VOU1BFQ0lGSUVEEAASIgoeQUZGSUxJQVRFX0xJTktfVFlQRV9PTkJPQVJESU5HEAESHQoZQUZGSUxJQVRFX0xJTktfVFlQRV9MT0dJThAC');
 @$core.Deprecated('Use affiliateDescriptor instead')
 const Affiliate$json = const {
   '1': 'Affiliate',
@@ -49,3 +61,26 @@ const CreateAffiliateRequest$json = const {
 
 /// Descriptor for `CreateAffiliateRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createAffiliateRequestDescriptor = $convert.base64Decode('ChZDcmVhdGVBZmZpbGlhdGVSZXF1ZXN0EiEKDGNvbXBhbnlfbmFtZRgBIAEoCVILY29tcGFueU5hbWUSIwoNY29udGFjdF9lbWFpbBgCIAEoCVIMY29udGFjdEVtYWlsEjkKDWJ1c2luZXNzX3R5cGUYAyABKA4yFC5hZmZlY3QuQnVzaW5lc3NUeXBlUgxidXNpbmVzc1R5cGU=');
+@$core.Deprecated('Use generateAffiliateLinkRequestDescriptor instead')
+const GenerateAffiliateLinkRequest$json = const {
+  '1': 'GenerateAffiliateLinkRequest',
+  '2': const [
+    const {'1': 'affiliate_id', '3': 1, '4': 1, '5': 9, '10': 'affiliateId'},
+    const {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.affect.AffiliateLinkType', '10': 'type'},
+  ],
+};
+
+/// Descriptor for `GenerateAffiliateLinkRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateAffiliateLinkRequestDescriptor = $convert.base64Decode('ChxHZW5lcmF0ZUFmZmlsaWF0ZUxpbmtSZXF1ZXN0EiEKDGFmZmlsaWF0ZV9pZBgBIAEoCVILYWZmaWxpYXRlSWQSLQoEdHlwZRgCIAEoDjIZLmFmZmVjdC5BZmZpbGlhdGVMaW5rVHlwZVIEdHlwZQ==');
+@$core.Deprecated('Use affiliateLinkDescriptor instead')
+const AffiliateLink$json = const {
+  '1': 'AffiliateLink',
+  '2': const [
+    const {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
+    const {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.affect.AffiliateLinkType', '10': 'type'},
+    const {'1': 'expire_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expireTime'},
+  ],
+};
+
+/// Descriptor for `AffiliateLink`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List affiliateLinkDescriptor = $convert.base64Decode('Cg1BZmZpbGlhdGVMaW5rEhAKA3VybBgBIAEoCVIDdXJsEi0KBHR5cGUYAiABKA4yGS5hZmZlY3QuQWZmaWxpYXRlTGlua1R5cGVSBHR5cGUSOwoLZXhwaXJlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpleHBpcmVUaW1l');

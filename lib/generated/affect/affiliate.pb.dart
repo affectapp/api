@@ -211,3 +211,141 @@ class CreateAffiliateRequest extends $pb.GeneratedMessage {
   void clearBusinessType() => clearField(3);
 }
 
+class GenerateAffiliateLinkRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenerateAffiliateLinkRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'affiliateId')
+    ..e<AffiliateLinkType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AffiliateLinkType.AFFILIATE_LINK_TYPE_UNSPECIFIED, valueOf: AffiliateLinkType.valueOf, enumValues: AffiliateLinkType.values)
+    ..hasRequiredFields = false
+  ;
+
+  GenerateAffiliateLinkRequest._() : super();
+  factory GenerateAffiliateLinkRequest({
+    $core.String? affiliateId,
+    AffiliateLinkType? type,
+  }) {
+    final _result = create();
+    if (affiliateId != null) {
+      _result.affiliateId = affiliateId;
+    }
+    if (type != null) {
+      _result.type = type;
+    }
+    return _result;
+  }
+  factory GenerateAffiliateLinkRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GenerateAffiliateLinkRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GenerateAffiliateLinkRequest clone() => GenerateAffiliateLinkRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GenerateAffiliateLinkRequest copyWith(void Function(GenerateAffiliateLinkRequest) updates) => super.copyWith((message) => updates(message as GenerateAffiliateLinkRequest)) as GenerateAffiliateLinkRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GenerateAffiliateLinkRequest create() => GenerateAffiliateLinkRequest._();
+  GenerateAffiliateLinkRequest createEmptyInstance() => create();
+  static $pb.PbList<GenerateAffiliateLinkRequest> createRepeated() => $pb.PbList<GenerateAffiliateLinkRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GenerateAffiliateLinkRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateAffiliateLinkRequest>(create);
+  static GenerateAffiliateLinkRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get affiliateId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set affiliateId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAffiliateId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAffiliateId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  AffiliateLinkType get type => $_getN(1);
+  @$pb.TagNumber(2)
+  set type(AffiliateLinkType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
+}
+
+class AffiliateLink extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AffiliateLink', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..e<AffiliateLinkType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AffiliateLinkType.AFFILIATE_LINK_TYPE_UNSPECIFIED, valueOf: AffiliateLinkType.valueOf, enumValues: AffiliateLinkType.values)
+    ..aOM<$6.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expireTime', subBuilder: $6.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  AffiliateLink._() : super();
+  factory AffiliateLink({
+    $core.String? url,
+    AffiliateLinkType? type,
+    $6.Timestamp? expireTime,
+  }) {
+    final _result = create();
+    if (url != null) {
+      _result.url = url;
+    }
+    if (type != null) {
+      _result.type = type;
+    }
+    if (expireTime != null) {
+      _result.expireTime = expireTime;
+    }
+    return _result;
+  }
+  factory AffiliateLink.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AffiliateLink.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AffiliateLink clone() => AffiliateLink()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AffiliateLink copyWith(void Function(AffiliateLink) updates) => super.copyWith((message) => updates(message as AffiliateLink)) as AffiliateLink; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AffiliateLink create() => AffiliateLink._();
+  AffiliateLink createEmptyInstance() => create();
+  static $pb.PbList<AffiliateLink> createRepeated() => $pb.PbList<AffiliateLink>();
+  @$core.pragma('dart2js:noInline')
+  static AffiliateLink getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AffiliateLink>(create);
+  static AffiliateLink? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get url => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set url($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUrl() => clearField(1);
+
+  @$pb.TagNumber(2)
+  AffiliateLinkType get type => $_getN(1);
+  @$pb.TagNumber(2)
+  set type(AffiliateLinkType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $6.Timestamp get expireTime => $_getN(2);
+  @$pb.TagNumber(3)
+  set expireTime($6.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasExpireTime() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpireTime() => clearField(3);
+  @$pb.TagNumber(3)
+  $6.Timestamp ensureExpireTime() => $_ensure(2);
+}
+

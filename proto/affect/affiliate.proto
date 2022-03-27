@@ -39,7 +39,37 @@ message CreateAffiliateRequest {
     BusinessType business_type = 3;
 }
 
+message GenerateAffiliateLinkRequest {
+    // The id of the affiliate for which to generate the link.
+    string affiliate_id = 1;
+
+    // The type of link to generate.
+    AffiliateLinkType type = 2;
+}
+
+// Link used for affiliates to manage their Stripe account.
+// Typically single-use, must be regenerated if used.
+message AffiliateLink {
+    // The url pointing to the desired page.
+    string url = 1;
+
+    // The type of affiliate link.
+    AffiliateLinkType type = 2;
+
+    // Optional. Populated if the link expires.
+    google.protobuf.Timestamp expire_time = 3;
+}
+
+enum AffiliateLinkType {
+    AFFILIATE_LINK_TYPE_UNSPECIFIED = 0;
+    AFFILIATE_LINK_TYPE_ONBOARDING = 1;
+    AFFILIATE_LINK_TYPE_LOGIN = 2;
+}
+
 service AffiliateService {
     // Creates an affiliate.
     rpc CreateAffiliate(CreateAffiliateRequest) returns (Affiliate) {}
+    
+    // Generates an affiliate link.
+    rpc GenerateAffiliateLink(GenerateAffiliateLinkRequest) returns (AffiliateLink) {}
 }

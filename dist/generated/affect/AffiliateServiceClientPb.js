@@ -16,6 +16,9 @@ var AffiliateServiceClient = /** @class */ (function () {
         this.methodInfoCreateAffiliate = new grpcWeb.MethodDescriptor('/affect.AffiliateService/CreateAffiliate', grpcWeb.MethodType.UNARY, affect_affiliate_pb.CreateAffiliateRequest, affect_affiliate_pb.Affiliate, function (request) {
             return request.serializeBinary();
         }, affect_affiliate_pb.Affiliate.deserializeBinary);
+        this.methodInfoGenerateAffiliateLink = new grpcWeb.MethodDescriptor('/affect.AffiliateService/GenerateAffiliateLink', grpcWeb.MethodType.UNARY, affect_affiliate_pb.GenerateAffiliateLinkRequest, affect_affiliate_pb.AffiliateLink, function (request) {
+            return request.serializeBinary();
+        }, affect_affiliate_pb.AffiliateLink.deserializeBinary);
         if (!options)
             options = {};
         if (!credentials)
@@ -33,6 +36,14 @@ var AffiliateServiceClient = /** @class */ (function () {
         }
         return this.client_.unaryCall(this.hostname_ +
             '/affect.AffiliateService/CreateAffiliate', request, metadata || {}, this.methodInfoCreateAffiliate);
+    };
+    AffiliateServiceClient.prototype.generateAffiliateLink = function (request, metadata, callback) {
+        if (callback !== undefined) {
+            return this.client_.rpcCall(this.hostname_ +
+                '/affect.AffiliateService/GenerateAffiliateLink', request, metadata || {}, this.methodInfoGenerateAffiliateLink, callback);
+        }
+        return this.client_.unaryCall(this.hostname_ +
+            '/affect.AffiliateService/GenerateAffiliateLink', request, metadata || {}, this.methodInfoGenerateAffiliateLink);
     };
     return AffiliateServiceClient;
 }());
