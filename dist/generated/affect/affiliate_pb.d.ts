@@ -26,6 +26,11 @@ export class Affiliate extends jspb.Message {
   getBusinessType(): BusinessType;
   setBusinessType(value: BusinessType): Affiliate;
 
+  getManagers(): AffiliateManager | undefined;
+  setManagers(value?: AffiliateManager): Affiliate;
+  hasManagers(): boolean;
+  clearManagers(): Affiliate;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Affiliate.AsObject;
   static toObject(includeInstance: boolean, msg: Affiliate): Affiliate.AsObject;
@@ -42,6 +47,25 @@ export namespace Affiliate {
     companyName: string,
     contactEmail: string,
     businessType: BusinessType,
+    managers?: AffiliateManager.AsObject,
+  }
+}
+
+export class AffiliateManager extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): AffiliateManager;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AffiliateManager.AsObject;
+  static toObject(includeInstance: boolean, msg: AffiliateManager): AffiliateManager.AsObject;
+  static serializeBinaryToWriter(message: AffiliateManager, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AffiliateManager;
+  static deserializeBinaryFromReader(message: AffiliateManager, reader: jspb.BinaryReader): AffiliateManager;
+}
+
+export namespace AffiliateManager {
+  export type AsObject = {
+    userId: string,
   }
 }
 
@@ -54,6 +78,9 @@ export class CreateAffiliateRequest extends jspb.Message {
 
   getBusinessType(): BusinessType;
   setBusinessType(value: BusinessType): CreateAffiliateRequest;
+
+  getUserId(): string;
+  setUserId(value: string): CreateAffiliateRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAffiliateRequest.AsObject;
@@ -68,6 +95,7 @@ export namespace CreateAffiliateRequest {
     companyName: string,
     contactEmail: string,
     businessType: BusinessType,
+    userId: string,
   }
 }
 

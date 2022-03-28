@@ -23,6 +23,7 @@ class Affiliate extends $pb.GeneratedMessage {
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'companyName')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contactEmail')
     ..e<BusinessType>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'businessType', $pb.PbFieldType.OE, defaultOrMaker: BusinessType.BUSINESS_TYPE_UNSPECIFIED, valueOf: BusinessType.valueOf, enumValues: BusinessType.values)
+    ..aOM<AffiliateManager>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'managers', subBuilder: AffiliateManager.create)
     ..hasRequiredFields = false
   ;
 
@@ -34,6 +35,7 @@ class Affiliate extends $pb.GeneratedMessage {
     $core.String? companyName,
     $core.String? contactEmail,
     BusinessType? businessType,
+    AffiliateManager? managers,
   }) {
     final _result = create();
     if (affiliateId != null) {
@@ -53,6 +55,9 @@ class Affiliate extends $pb.GeneratedMessage {
     }
     if (businessType != null) {
       _result.businessType = businessType;
+    }
+    if (managers != null) {
+      _result.managers = managers;
     }
     return _result;
   }
@@ -134,6 +139,64 @@ class Affiliate extends $pb.GeneratedMessage {
   $core.bool hasBusinessType() => $_has(5);
   @$pb.TagNumber(6)
   void clearBusinessType() => clearField(6);
+
+  @$pb.TagNumber(7)
+  AffiliateManager get managers => $_getN(6);
+  @$pb.TagNumber(7)
+  set managers(AffiliateManager v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasManagers() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearManagers() => clearField(7);
+  @$pb.TagNumber(7)
+  AffiliateManager ensureManagers() => $_ensure(6);
+}
+
+class AffiliateManager extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AffiliateManager', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
+    ..hasRequiredFields = false
+  ;
+
+  AffiliateManager._() : super();
+  factory AffiliateManager({
+    $core.String? userId,
+  }) {
+    final _result = create();
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    return _result;
+  }
+  factory AffiliateManager.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AffiliateManager.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AffiliateManager clone() => AffiliateManager()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AffiliateManager copyWith(void Function(AffiliateManager) updates) => super.copyWith((message) => updates(message as AffiliateManager)) as AffiliateManager; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AffiliateManager create() => AffiliateManager._();
+  AffiliateManager createEmptyInstance() => create();
+  static $pb.PbList<AffiliateManager> createRepeated() => $pb.PbList<AffiliateManager>();
+  @$core.pragma('dart2js:noInline')
+  static AffiliateManager getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AffiliateManager>(create);
+  static AffiliateManager? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => clearField(1);
 }
 
 class CreateAffiliateRequest extends $pb.GeneratedMessage {
@@ -141,6 +204,7 @@ class CreateAffiliateRequest extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'companyName')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contactEmail')
     ..e<BusinessType>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'businessType', $pb.PbFieldType.OE, defaultOrMaker: BusinessType.BUSINESS_TYPE_UNSPECIFIED, valueOf: BusinessType.valueOf, enumValues: BusinessType.values)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..hasRequiredFields = false
   ;
 
@@ -149,6 +213,7 @@ class CreateAffiliateRequest extends $pb.GeneratedMessage {
     $core.String? companyName,
     $core.String? contactEmail,
     BusinessType? businessType,
+    $core.String? userId,
   }) {
     final _result = create();
     if (companyName != null) {
@@ -159,6 +224,9 @@ class CreateAffiliateRequest extends $pb.GeneratedMessage {
     }
     if (businessType != null) {
       _result.businessType = businessType;
+    }
+    if (userId != null) {
+      _result.userId = userId;
     }
     return _result;
   }
@@ -209,6 +277,15 @@ class CreateAffiliateRequest extends $pb.GeneratedMessage {
   $core.bool hasBusinessType() => $_has(2);
   @$pb.TagNumber(3)
   void clearBusinessType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get userId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set userId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasUserId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUserId() => clearField(4);
 }
 
 class GenerateAffiliateLinkRequest extends $pb.GeneratedMessage {
