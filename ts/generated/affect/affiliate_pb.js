@@ -41,7 +41,7 @@ goog.exportSymbol('proto.affect.GenerateAffiliateLinkRequest', null, global);
  * @constructor
  */
 proto.affect.Affiliate = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.affect.Affiliate.repeatedFields_, null);
 };
 goog.inherits(proto.affect.Affiliate, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -136,6 +136,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.affect.AffiliateLink.displayName = 'proto.affect.AffiliateLink';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.affect.Affiliate.repeatedFields_ = [7];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -173,7 +180,8 @@ proto.affect.Affiliate.toObject = function(includeInstance, msg) {
     companyName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     contactEmail: jspb.Message.getFieldWithDefault(msg, 5, ""),
     businessType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    managers: (f = msg.getManagers()) && proto.affect.AffiliateManager.toObject(includeInstance, f)
+    managersList: jspb.Message.toObjectList(msg.getManagersList(),
+    proto.affect.AffiliateManager.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -239,7 +247,7 @@ proto.affect.Affiliate.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = new proto.affect.AffiliateManager;
       reader.readMessage(value,proto.affect.AffiliateManager.deserializeBinaryFromReader);
-      msg.setManagers(value);
+      msg.addManagers(value);
       break;
     default:
       reader.skipField();
@@ -314,9 +322,9 @@ proto.affect.Affiliate.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getManagers();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getManagersList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       7,
       f,
       proto.affect.AffiliateManager.serializeBinaryToWriter
@@ -472,39 +480,40 @@ proto.affect.Affiliate.prototype.setBusinessType = function(value) {
 
 
 /**
- * optional AffiliateManager managers = 7;
- * @return {?proto.affect.AffiliateManager}
+ * repeated AffiliateManager managers = 7;
+ * @return {!Array<!proto.affect.AffiliateManager>}
  */
-proto.affect.Affiliate.prototype.getManagers = function() {
-  return /** @type{?proto.affect.AffiliateManager} */ (
-    jspb.Message.getWrapperField(this, proto.affect.AffiliateManager, 7));
+proto.affect.Affiliate.prototype.getManagersList = function() {
+  return /** @type{!Array<!proto.affect.AffiliateManager>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.affect.AffiliateManager, 7));
 };
 
 
 /**
- * @param {?proto.affect.AffiliateManager|undefined} value
+ * @param {!Array<!proto.affect.AffiliateManager>} value
  * @return {!proto.affect.Affiliate} returns this
 */
-proto.affect.Affiliate.prototype.setManagers = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+proto.affect.Affiliate.prototype.setManagersList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.affect.AffiliateManager=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.affect.AffiliateManager}
+ */
+proto.affect.Affiliate.prototype.addManagers = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.affect.AffiliateManager, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.affect.Affiliate} returns this
  */
-proto.affect.Affiliate.prototype.clearManagers = function() {
-  return this.setManagers(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.affect.Affiliate.prototype.hasManagers = function() {
-  return jspb.Message.getField(this, 7) != null;
+proto.affect.Affiliate.prototype.clearManagersList = function() {
+  return this.setManagersList([]);
 };
 
 

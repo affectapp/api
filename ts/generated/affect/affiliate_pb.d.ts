@@ -26,10 +26,10 @@ export class Affiliate extends jspb.Message {
   getBusinessType(): BusinessType;
   setBusinessType(value: BusinessType): Affiliate;
 
-  getManagers(): AffiliateManager | undefined;
-  setManagers(value?: AffiliateManager): Affiliate;
-  hasManagers(): boolean;
-  clearManagers(): Affiliate;
+  getManagersList(): Array<AffiliateManager>;
+  setManagersList(value: Array<AffiliateManager>): Affiliate;
+  clearManagersList(): Affiliate;
+  addManagers(value?: AffiliateManager, index?: number): AffiliateManager;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Affiliate.AsObject;
@@ -47,7 +47,7 @@ export namespace Affiliate {
     companyName: string,
     contactEmail: string,
     businessType: BusinessType,
-    managers?: AffiliateManager.AsObject,
+    managersList: Array<AffiliateManager.AsObject>,
   }
 }
 

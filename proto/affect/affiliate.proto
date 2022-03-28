@@ -24,7 +24,7 @@ message Affiliate {
     BusinessType business_type = 6;
 
     // The list of managers of the affiliate.
-    AffiliateManager managers = 7;
+    repeated AffiliateManager managers = 7;
 }
 
 message AffiliateManager {

@@ -44,12 +44,12 @@ const Affiliate$json = const {
     const {'1': 'company_name', '3': 4, '4': 1, '5': 9, '10': 'companyName'},
     const {'1': 'contact_email', '3': 5, '4': 1, '5': 9, '10': 'contactEmail'},
     const {'1': 'business_type', '3': 6, '4': 1, '5': 14, '6': '.affect.BusinessType', '10': 'businessType'},
-    const {'1': 'managers', '3': 7, '4': 1, '5': 11, '6': '.affect.AffiliateManager', '10': 'managers'},
+    const {'1': 'managers', '3': 7, '4': 3, '5': 11, '6': '.affect.AffiliateManager', '10': 'managers'},
   ],
 };
 
 /// Descriptor for `Affiliate`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List affiliateDescriptor = $convert.base64Decode('CglBZmZpbGlhdGUSIQoMYWZmaWxpYXRlX2lkGAEgASgJUgthZmZpbGlhdGVJZBI7CgtjcmVhdGVfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmNyZWF0ZVRpbWUSOwoLdXBkYXRlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgp1cGRhdGVUaW1lEiEKDGNvbXBhbnlfbmFtZRgEIAEoCVILY29tcGFueU5hbWUSIwoNY29udGFjdF9lbWFpbBgFIAEoCVIMY29udGFjdEVtYWlsEjkKDWJ1c2luZXNzX3R5cGUYBiABKA4yFC5hZmZlY3QuQnVzaW5lc3NUeXBlUgxidXNpbmVzc1R5cGUSNAoIbWFuYWdlcnMYByABKAsyGC5hZmZlY3QuQWZmaWxpYXRlTWFuYWdlclIIbWFuYWdlcnM=');
+final $typed_data.Uint8List affiliateDescriptor = $convert.base64Decode('CglBZmZpbGlhdGUSIQoMYWZmaWxpYXRlX2lkGAEgASgJUgthZmZpbGlhdGVJZBI7CgtjcmVhdGVfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmNyZWF0ZVRpbWUSOwoLdXBkYXRlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgp1cGRhdGVUaW1lEiEKDGNvbXBhbnlfbmFtZRgEIAEoCVILY29tcGFueU5hbWUSIwoNY29udGFjdF9lbWFpbBgFIAEoCVIMY29udGFjdEVtYWlsEjkKDWJ1c2luZXNzX3R5cGUYBiABKA4yFC5hZmZlY3QuQnVzaW5lc3NUeXBlUgxidXNpbmVzc1R5cGUSNAoIbWFuYWdlcnMYByADKAsyGC5hZmZlY3QuQWZmaWxpYXRlTWFuYWdlclIIbWFuYWdlcnM=');
 @$core.Deprecated('Use affiliateManagerDescriptor instead')
 const AffiliateManager$json = const {
   '1': 'AffiliateManager',
