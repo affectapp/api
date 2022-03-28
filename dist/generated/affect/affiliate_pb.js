@@ -658,7 +658,7 @@ proto.affect.GenerateAffiliateLinkRequest.prototype.toObject = function(opt_incl
 proto.affect.GenerateAffiliateLinkRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     affiliateId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    linkType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -701,7 +701,7 @@ proto.affect.GenerateAffiliateLinkRequest.deserializeBinaryFromReader = function
       break;
     case 2:
       var value = /** @type {!proto.affect.AffiliateLinkType} */ (reader.readEnum());
-      msg.setType(value);
+      msg.setLinkType(value);
       break;
     default:
       reader.skipField();
@@ -739,7 +739,7 @@ proto.affect.GenerateAffiliateLinkRequest.serializeBinaryToWriter = function(mes
       f
     );
   }
-  f = message.getType();
+  f = message.getLinkType();
   if (f !== 0.0) {
     writer.writeEnum(
       2,
@@ -768,10 +768,10 @@ proto.affect.GenerateAffiliateLinkRequest.prototype.setAffiliateId = function(va
 
 
 /**
- * optional AffiliateLinkType type = 2;
+ * optional AffiliateLinkType link_type = 2;
  * @return {!proto.affect.AffiliateLinkType}
  */
-proto.affect.GenerateAffiliateLinkRequest.prototype.getType = function() {
+proto.affect.GenerateAffiliateLinkRequest.prototype.getLinkType = function() {
   return /** @type {!proto.affect.AffiliateLinkType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -780,7 +780,7 @@ proto.affect.GenerateAffiliateLinkRequest.prototype.getType = function() {
  * @param {!proto.affect.AffiliateLinkType} value
  * @return {!proto.affect.GenerateAffiliateLinkRequest} returns this
  */
-proto.affect.GenerateAffiliateLinkRequest.prototype.setType = function(value) {
+proto.affect.GenerateAffiliateLinkRequest.prototype.setLinkType = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
@@ -818,7 +818,7 @@ proto.affect.AffiliateLink.prototype.toObject = function(opt_includeInstance) {
 proto.affect.AffiliateLink.toObject = function(includeInstance, msg) {
   var f, obj = {
     url: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    linkType: jspb.Message.getFieldWithDefault(msg, 2, 0),
     expireTime: (f = msg.getExpireTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
@@ -862,7 +862,7 @@ proto.affect.AffiliateLink.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {!proto.affect.AffiliateLinkType} */ (reader.readEnum());
-      msg.setType(value);
+      msg.setLinkType(value);
       break;
     case 3:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -905,7 +905,7 @@ proto.affect.AffiliateLink.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getType();
+  f = message.getLinkType();
   if (f !== 0.0) {
     writer.writeEnum(
       2,
@@ -942,10 +942,10 @@ proto.affect.AffiliateLink.prototype.setUrl = function(value) {
 
 
 /**
- * optional AffiliateLinkType type = 2;
+ * optional AffiliateLinkType link_type = 2;
  * @return {!proto.affect.AffiliateLinkType}
  */
-proto.affect.AffiliateLink.prototype.getType = function() {
+proto.affect.AffiliateLink.prototype.getLinkType = function() {
   return /** @type {!proto.affect.AffiliateLinkType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -954,7 +954,7 @@ proto.affect.AffiliateLink.prototype.getType = function() {
  * @param {!proto.affect.AffiliateLinkType} value
  * @return {!proto.affect.AffiliateLink} returns this
  */
-proto.affect.AffiliateLink.prototype.setType = function(value) {
+proto.affect.AffiliateLink.prototype.setLinkType = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
 };
 

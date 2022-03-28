@@ -19,3 +19,5 @@ tsc
 cd ./ts
 find . -name '*.js' -exec cp --parents '{}' ../dist \;
 find . -name '*.d.ts' -exec cp --parents '{}' ../dist \;
+
+cargo build

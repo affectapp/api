@@ -214,21 +214,21 @@ class CreateAffiliateRequest extends $pb.GeneratedMessage {
 class GenerateAffiliateLinkRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenerateAffiliateLinkRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'affiliateId')
-    ..e<AffiliateLinkType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AffiliateLinkType.AFFILIATE_LINK_TYPE_UNSPECIFIED, valueOf: AffiliateLinkType.valueOf, enumValues: AffiliateLinkType.values)
+    ..e<AffiliateLinkType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'linkType', $pb.PbFieldType.OE, defaultOrMaker: AffiliateLinkType.AFFILIATE_LINK_TYPE_UNSPECIFIED, valueOf: AffiliateLinkType.valueOf, enumValues: AffiliateLinkType.values)
     ..hasRequiredFields = false
   ;
 
   GenerateAffiliateLinkRequest._() : super();
   factory GenerateAffiliateLinkRequest({
     $core.String? affiliateId,
-    AffiliateLinkType? type,
+    AffiliateLinkType? linkType,
   }) {
     final _result = create();
     if (affiliateId != null) {
       _result.affiliateId = affiliateId;
     }
-    if (type != null) {
-      _result.type = type;
+    if (linkType != null) {
+      _result.linkType = linkType;
     }
     return _result;
   }
@@ -263,19 +263,19 @@ class GenerateAffiliateLinkRequest extends $pb.GeneratedMessage {
   void clearAffiliateId() => clearField(1);
 
   @$pb.TagNumber(2)
-  AffiliateLinkType get type => $_getN(1);
+  AffiliateLinkType get linkType => $_getN(1);
   @$pb.TagNumber(2)
-  set type(AffiliateLinkType v) { setField(2, v); }
+  set linkType(AffiliateLinkType v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasType() => $_has(1);
+  $core.bool hasLinkType() => $_has(1);
   @$pb.TagNumber(2)
-  void clearType() => clearField(2);
+  void clearLinkType() => clearField(2);
 }
 
 class AffiliateLink extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AffiliateLink', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
-    ..e<AffiliateLinkType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AffiliateLinkType.AFFILIATE_LINK_TYPE_UNSPECIFIED, valueOf: AffiliateLinkType.valueOf, enumValues: AffiliateLinkType.values)
+    ..e<AffiliateLinkType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'linkType', $pb.PbFieldType.OE, defaultOrMaker: AffiliateLinkType.AFFILIATE_LINK_TYPE_UNSPECIFIED, valueOf: AffiliateLinkType.valueOf, enumValues: AffiliateLinkType.values)
     ..aOM<$6.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expireTime', subBuilder: $6.Timestamp.create)
     ..hasRequiredFields = false
   ;
@@ -283,15 +283,15 @@ class AffiliateLink extends $pb.GeneratedMessage {
   AffiliateLink._() : super();
   factory AffiliateLink({
     $core.String? url,
-    AffiliateLinkType? type,
+    AffiliateLinkType? linkType,
     $6.Timestamp? expireTime,
   }) {
     final _result = create();
     if (url != null) {
       _result.url = url;
     }
-    if (type != null) {
-      _result.type = type;
+    if (linkType != null) {
+      _result.linkType = linkType;
     }
     if (expireTime != null) {
       _result.expireTime = expireTime;
@@ -329,13 +329,13 @@ class AffiliateLink extends $pb.GeneratedMessage {
   void clearUrl() => clearField(1);
 
   @$pb.TagNumber(2)
-  AffiliateLinkType get type => $_getN(1);
+  AffiliateLinkType get linkType => $_getN(1);
   @$pb.TagNumber(2)
-  set type(AffiliateLinkType v) { setField(2, v); }
+  set linkType(AffiliateLinkType v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasType() => $_has(1);
+  $core.bool hasLinkType() => $_has(1);
   @$pb.TagNumber(2)
-  void clearType() => clearField(2);
+  void clearLinkType() => clearField(2);
 
   @$pb.TagNumber(3)
   $6.Timestamp get expireTime => $_getN(2);

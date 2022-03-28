@@ -75,8 +75,8 @@ export class GenerateAffiliateLinkRequest extends jspb.Message {
   getAffiliateId(): string;
   setAffiliateId(value: string): GenerateAffiliateLinkRequest;
 
-  getType(): AffiliateLinkType;
-  setType(value: AffiliateLinkType): GenerateAffiliateLinkRequest;
+  getLinkType(): AffiliateLinkType;
+  setLinkType(value: AffiliateLinkType): GenerateAffiliateLinkRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenerateAffiliateLinkRequest.AsObject;
@@ -89,7 +89,7 @@ export class GenerateAffiliateLinkRequest extends jspb.Message {
 export namespace GenerateAffiliateLinkRequest {
   export type AsObject = {
     affiliateId: string,
-    type: AffiliateLinkType,
+    linkType: AffiliateLinkType,
   }
 }
 
@@ -97,8 +97,8 @@ export class AffiliateLink extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): AffiliateLink;
 
-  getType(): AffiliateLinkType;
-  setType(value: AffiliateLinkType): AffiliateLink;
+  getLinkType(): AffiliateLinkType;
+  setLinkType(value: AffiliateLinkType): AffiliateLink;
 
   getExpireTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setExpireTime(value?: google_protobuf_timestamp_pb.Timestamp): AffiliateLink;
@@ -116,7 +116,7 @@ export class AffiliateLink extends jspb.Message {
 export namespace AffiliateLink {
   export type AsObject = {
     url: string,
-    type: AffiliateLinkType,
+    linkType: AffiliateLinkType,
     expireTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }

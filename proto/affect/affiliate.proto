@@ -44,7 +44,7 @@ message GenerateAffiliateLinkRequest {
     string affiliate_id = 1;
 
     // The type of link to generate.
-    AffiliateLinkType type = 2;
+    AffiliateLinkType link_type = 2;
 }
 
 // Link used for affiliates to manage their Stripe account.
@@ -54,7 +54,7 @@ message AffiliateLink {
     string url = 1;
 
     // The type of affiliate link.
-    AffiliateLinkType type = 2;
+    AffiliateLinkType link_type = 2;
 
     // Optional. Populated if the link expires.
     google.protobuf.Timestamp expire_time = 3;

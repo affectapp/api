@@ -66,21 +66,21 @@ const GenerateAffiliateLinkRequest$json = const {
   '1': 'GenerateAffiliateLinkRequest',
   '2': const [
     const {'1': 'affiliate_id', '3': 1, '4': 1, '5': 9, '10': 'affiliateId'},
-    const {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.affect.AffiliateLinkType', '10': 'type'},
+    const {'1': 'link_type', '3': 2, '4': 1, '5': 14, '6': '.affect.AffiliateLinkType', '10': 'linkType'},
   ],
 };
 
 /// Descriptor for `GenerateAffiliateLinkRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateAffiliateLinkRequestDescriptor = $convert.base64Decode('ChxHZW5lcmF0ZUFmZmlsaWF0ZUxpbmtSZXF1ZXN0EiEKDGFmZmlsaWF0ZV9pZBgBIAEoCVILYWZmaWxpYXRlSWQSLQoEdHlwZRgCIAEoDjIZLmFmZmVjdC5BZmZpbGlhdGVMaW5rVHlwZVIEdHlwZQ==');
+final $typed_data.Uint8List generateAffiliateLinkRequestDescriptor = $convert.base64Decode('ChxHZW5lcmF0ZUFmZmlsaWF0ZUxpbmtSZXF1ZXN0EiEKDGFmZmlsaWF0ZV9pZBgBIAEoCVILYWZmaWxpYXRlSWQSNgoJbGlua190eXBlGAIgASgOMhkuYWZmZWN0LkFmZmlsaWF0ZUxpbmtUeXBlUghsaW5rVHlwZQ==');
 @$core.Deprecated('Use affiliateLinkDescriptor instead')
 const AffiliateLink$json = const {
   '1': 'AffiliateLink',
   '2': const [
     const {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
-    const {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.affect.AffiliateLinkType', '10': 'type'},
+    const {'1': 'link_type', '3': 2, '4': 1, '5': 14, '6': '.affect.AffiliateLinkType', '10': 'linkType'},
     const {'1': 'expire_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expireTime'},
   ],
 };
 
 /// Descriptor for `AffiliateLink`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List affiliateLinkDescriptor = $convert.base64Decode('Cg1BZmZpbGlhdGVMaW5rEhAKA3VybBgBIAEoCVIDdXJsEi0KBHR5cGUYAiABKA4yGS5hZmZlY3QuQWZmaWxpYXRlTGlua1R5cGVSBHR5cGUSOwoLZXhwaXJlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpleHBpcmVUaW1l');
+final $typed_data.Uint8List affiliateLinkDescriptor = $convert.base64Decode('Cg1BZmZpbGlhdGVMaW5rEhAKA3VybBgBIAEoCVIDdXJsEjYKCWxpbmtfdHlwZRgCIAEoDjIZLmFmZmVjdC5BZmZpbGlhdGVMaW5rVHlwZVIIbGlua1R5cGUSOwoLZXhwaXJlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpleHBpcmVUaW1l');
