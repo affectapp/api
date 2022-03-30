@@ -26,6 +26,9 @@ export class Affiliate extends jspb.Message {
   getBusinessType(): BusinessType;
   setBusinessType(value: BusinessType): Affiliate;
 
+  getAssertedNonprofitId(): string;
+  setAssertedNonprofitId(value: string): Affiliate;
+
   getManagersList(): Array<AffiliateManager>;
   setManagersList(value: Array<AffiliateManager>): Affiliate;
   clearManagersList(): Affiliate;
@@ -47,6 +50,7 @@ export namespace Affiliate {
     companyName: string,
     contactEmail: string,
     businessType: BusinessType,
+    assertedNonprofitId: string,
     managersList: Array<AffiliateManager.AsObject>,
   }
 }
@@ -82,6 +86,9 @@ export class CreateAffiliateRequest extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): CreateAffiliateRequest;
 
+  getAssertedNonprofitId(): string;
+  setAssertedNonprofitId(value: string): CreateAffiliateRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAffiliateRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateAffiliateRequest): CreateAffiliateRequest.AsObject;
@@ -96,6 +103,7 @@ export namespace CreateAffiliateRequest {
     contactEmail: string,
     businessType: BusinessType,
     userId: string,
+    assertedNonprofitId: string,
   }
 }
 

@@ -23,7 +23,8 @@ class Affiliate extends $pb.GeneratedMessage {
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'companyName')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contactEmail')
     ..e<BusinessType>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'businessType', $pb.PbFieldType.OE, defaultOrMaker: BusinessType.BUSINESS_TYPE_UNSPECIFIED, valueOf: BusinessType.valueOf, enumValues: BusinessType.values)
-    ..pc<AffiliateManager>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'managers', $pb.PbFieldType.PM, subBuilder: AffiliateManager.create)
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assertedNonprofitId')
+    ..pc<AffiliateManager>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'managers', $pb.PbFieldType.PM, subBuilder: AffiliateManager.create)
     ..hasRequiredFields = false
   ;
 
@@ -35,6 +36,7 @@ class Affiliate extends $pb.GeneratedMessage {
     $core.String? companyName,
     $core.String? contactEmail,
     BusinessType? businessType,
+    $core.String? assertedNonprofitId,
     $core.Iterable<AffiliateManager>? managers,
   }) {
     final _result = create();
@@ -55,6 +57,9 @@ class Affiliate extends $pb.GeneratedMessage {
     }
     if (businessType != null) {
       _result.businessType = businessType;
+    }
+    if (assertedNonprofitId != null) {
+      _result.assertedNonprofitId = assertedNonprofitId;
     }
     if (managers != null) {
       _result.managers.addAll(managers);
@@ -141,7 +146,16 @@ class Affiliate extends $pb.GeneratedMessage {
   void clearBusinessType() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<AffiliateManager> get managers => $_getList(6);
+  $core.String get assertedNonprofitId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set assertedNonprofitId($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAssertedNonprofitId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAssertedNonprofitId() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<AffiliateManager> get managers => $_getList(7);
 }
 
 class AffiliateManager extends $pb.GeneratedMessage {
@@ -197,6 +211,7 @@ class CreateAffiliateRequest extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contactEmail')
     ..e<BusinessType>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'businessType', $pb.PbFieldType.OE, defaultOrMaker: BusinessType.BUSINESS_TYPE_UNSPECIFIED, valueOf: BusinessType.valueOf, enumValues: BusinessType.values)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assertedNonprofitId')
     ..hasRequiredFields = false
   ;
 
@@ -206,6 +221,7 @@ class CreateAffiliateRequest extends $pb.GeneratedMessage {
     $core.String? contactEmail,
     BusinessType? businessType,
     $core.String? userId,
+    $core.String? assertedNonprofitId,
   }) {
     final _result = create();
     if (companyName != null) {
@@ -219,6 +235,9 @@ class CreateAffiliateRequest extends $pb.GeneratedMessage {
     }
     if (userId != null) {
       _result.userId = userId;
+    }
+    if (assertedNonprofitId != null) {
+      _result.assertedNonprofitId = assertedNonprofitId;
     }
     return _result;
   }
@@ -278,6 +297,15 @@ class CreateAffiliateRequest extends $pb.GeneratedMessage {
   $core.bool hasUserId() => $_has(3);
   @$pb.TagNumber(4)
   void clearUserId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get assertedNonprofitId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set assertedNonprofitId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAssertedNonprofitId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAssertedNonprofitId() => clearField(5);
 }
 
 class GenerateAffiliateLinkRequest extends $pb.GeneratedMessage {

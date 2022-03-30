@@ -23,8 +23,11 @@ message Affiliate {
     // The business type of the affiliate.
     BusinessType business_type = 6;
 
+    // The id of the nonprofit that the affiliate asserts is theirs.
+    string asserted_nonprofit_id = 7;
+
     // The list of managers of the affiliate.
-    repeated AffiliateManager managers = 7;
+    repeated AffiliateManager managers = 8;
 }
 
 message AffiliateManager {
@@ -43,14 +46,17 @@ enum BusinessType {
 }
 
 message CreateAffiliateRequest {
+    // Company details:
     string company_name = 1;
     string contact_email = 2;
-    // Currently, only nonprofits are supported.
     BusinessType business_type = 3;
 
     // The id of the user creating the affiliate. Upon creation of the
     // affiliate, this user will become the sole manager.
     string user_id = 4;
+
+    // The id of the nonprofit that the user asserts is theirs.
+    string asserted_nonprofit_id = 5;
 }
 
 message GenerateAffiliateLinkRequest {

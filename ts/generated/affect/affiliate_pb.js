@@ -141,7 +141,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.affect.Affiliate.repeatedFields_ = [7];
+proto.affect.Affiliate.repeatedFields_ = [8];
 
 
 
@@ -180,6 +180,7 @@ proto.affect.Affiliate.toObject = function(includeInstance, msg) {
     companyName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     contactEmail: jspb.Message.getFieldWithDefault(msg, 5, ""),
     businessType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    assertedNonprofitId: jspb.Message.getFieldWithDefault(msg, 7, ""),
     managersList: jspb.Message.toObjectList(msg.getManagersList(),
     proto.affect.AffiliateManager.toObject, includeInstance)
   };
@@ -245,6 +246,10 @@ proto.affect.Affiliate.deserializeBinaryFromReader = function(msg, reader) {
       msg.setBusinessType(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssertedNonprofitId(value);
+      break;
+    case 8:
       var value = new proto.affect.AffiliateManager;
       reader.readMessage(value,proto.affect.AffiliateManager.deserializeBinaryFromReader);
       msg.addManagers(value);
@@ -322,10 +327,17 @@ proto.affect.Affiliate.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getAssertedNonprofitId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
   f = message.getManagersList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      8,
       f,
       proto.affect.AffiliateManager.serializeBinaryToWriter
     );
@@ -480,12 +492,30 @@ proto.affect.Affiliate.prototype.setBusinessType = function(value) {
 
 
 /**
- * repeated AffiliateManager managers = 7;
+ * optional string asserted_nonprofit_id = 7;
+ * @return {string}
+ */
+proto.affect.Affiliate.prototype.getAssertedNonprofitId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.affect.Affiliate} returns this
+ */
+proto.affect.Affiliate.prototype.setAssertedNonprofitId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * repeated AffiliateManager managers = 8;
  * @return {!Array<!proto.affect.AffiliateManager>}
  */
 proto.affect.Affiliate.prototype.getManagersList = function() {
   return /** @type{!Array<!proto.affect.AffiliateManager>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.affect.AffiliateManager, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.affect.AffiliateManager, 8));
 };
 
 
@@ -494,7 +524,7 @@ proto.affect.Affiliate.prototype.getManagersList = function() {
  * @return {!proto.affect.Affiliate} returns this
 */
 proto.affect.Affiliate.prototype.setManagersList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -504,7 +534,7 @@ proto.affect.Affiliate.prototype.setManagersList = function(value) {
  * @return {!proto.affect.AffiliateManager}
  */
 proto.affect.Affiliate.prototype.addManagers = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.affect.AffiliateManager, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.affect.AffiliateManager, opt_index);
 };
 
 
@@ -682,7 +712,8 @@ proto.affect.CreateAffiliateRequest.toObject = function(includeInstance, msg) {
     companyName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     contactEmail: jspb.Message.getFieldWithDefault(msg, 2, ""),
     businessType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    userId: jspb.Message.getFieldWithDefault(msg, 4, "")
+    userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    assertedNonprofitId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -734,6 +765,10 @@ proto.affect.CreateAffiliateRequest.deserializeBinaryFromReader = function(msg, 
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssertedNonprofitId(value);
       break;
     default:
       reader.skipField();
@@ -789,6 +824,13 @@ proto.affect.CreateAffiliateRequest.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getAssertedNonprofitId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -864,6 +906,24 @@ proto.affect.CreateAffiliateRequest.prototype.getUserId = function() {
  */
 proto.affect.CreateAffiliateRequest.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string asserted_nonprofit_id = 5;
+ * @return {string}
+ */
+proto.affect.CreateAffiliateRequest.prototype.getAssertedNonprofitId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.affect.CreateAffiliateRequest} returns this
+ */
+proto.affect.CreateAffiliateRequest.prototype.setAssertedNonprofitId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
