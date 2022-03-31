@@ -157,6 +157,24 @@ export namespace AffiliateLink {
   }
 }
 
+export class RefreshAffiliateRequest extends jspb.Message {
+  getAffiliateId(): string;
+  setAffiliateId(value: string): RefreshAffiliateRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshAffiliateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshAffiliateRequest): RefreshAffiliateRequest.AsObject;
+  static serializeBinaryToWriter(message: RefreshAffiliateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshAffiliateRequest;
+  static deserializeBinaryFromReader(message: RefreshAffiliateRequest, reader: jspb.BinaryReader): RefreshAffiliateRequest;
+}
+
+export namespace RefreshAffiliateRequest {
+  export type AsObject = {
+    affiliateId: string,
+  }
+}
+
 export enum BusinessType { 
   BUSINESS_TYPE_UNSPECIFIED = 0,
   BUSINESS_TYPE_INDIVIDUAL = 1,

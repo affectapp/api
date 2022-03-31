@@ -80,6 +80,11 @@ message AffiliateLink {
     google.protobuf.Timestamp expire_time = 3;
 }
 
+message RefreshAffiliateRequest {
+    // The id of the affiliate to refresh.
+    string affiliate_id = 1;
+}
+
 enum AffiliateLinkType {
     AFFILIATE_LINK_TYPE_UNSPECIFIED = 0;
     AFFILIATE_LINK_TYPE_ONBOARDING = 1;
@@ -92,4 +97,7 @@ service AffiliateService {
     
     // Generates an affiliate link.
     rpc GenerateAffiliateLink(GenerateAffiliateLinkRequest) returns (AffiliateLink) {}
+
+    // Force affiliate to sync information from Stripe.
+    rpc RefreshAffiliate(RefreshAffiliateRequest) returns (Affiliate) {}
 }

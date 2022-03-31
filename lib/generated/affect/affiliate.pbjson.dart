@@ -98,3 +98,13 @@ const AffiliateLink$json = const {
 
 /// Descriptor for `AffiliateLink`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List affiliateLinkDescriptor = $convert.base64Decode('Cg1BZmZpbGlhdGVMaW5rEhAKA3VybBgBIAEoCVIDdXJsEjYKCWxpbmtfdHlwZRgCIAEoDjIZLmFmZmVjdC5BZmZpbGlhdGVMaW5rVHlwZVIIbGlua1R5cGUSOwoLZXhwaXJlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpleHBpcmVUaW1l');
+@$core.Deprecated('Use refreshAffiliateRequestDescriptor instead')
+const RefreshAffiliateRequest$json = const {
+  '1': 'RefreshAffiliateRequest',
+  '2': const [
+    const {'1': 'affiliate_id', '3': 1, '4': 1, '5': 9, '10': 'affiliateId'},
+  ],
+};
+
+/// Descriptor for `RefreshAffiliateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List refreshAffiliateRequestDescriptor = $convert.base64Decode('ChdSZWZyZXNoQWZmaWxpYXRlUmVxdWVzdBIhCgxhZmZpbGlhdGVfaWQYASABKAlSC2FmZmlsaWF0ZUlk');

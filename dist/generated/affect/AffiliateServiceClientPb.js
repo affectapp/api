@@ -19,6 +19,9 @@ var AffiliateServiceClient = /** @class */ (function () {
         this.methodInfoGenerateAffiliateLink = new grpcWeb.MethodDescriptor('/affect.AffiliateService/GenerateAffiliateLink', grpcWeb.MethodType.UNARY, affect_affiliate_pb.GenerateAffiliateLinkRequest, affect_affiliate_pb.AffiliateLink, function (request) {
             return request.serializeBinary();
         }, affect_affiliate_pb.AffiliateLink.deserializeBinary);
+        this.methodInfoRefreshAffiliate = new grpcWeb.MethodDescriptor('/affect.AffiliateService/RefreshAffiliate', grpcWeb.MethodType.UNARY, affect_affiliate_pb.RefreshAffiliateRequest, affect_affiliate_pb.Affiliate, function (request) {
+            return request.serializeBinary();
+        }, affect_affiliate_pb.Affiliate.deserializeBinary);
         if (!options)
             options = {};
         if (!credentials)
@@ -44,6 +47,14 @@ var AffiliateServiceClient = /** @class */ (function () {
         }
         return this.client_.unaryCall(this.hostname_ +
             '/affect.AffiliateService/GenerateAffiliateLink', request, metadata || {}, this.methodInfoGenerateAffiliateLink);
+    };
+    AffiliateServiceClient.prototype.refreshAffiliate = function (request, metadata, callback) {
+        if (callback !== undefined) {
+            return this.client_.rpcCall(this.hostname_ +
+                '/affect.AffiliateService/RefreshAffiliate', request, metadata || {}, this.methodInfoRefreshAffiliate, callback);
+        }
+        return this.client_.unaryCall(this.hostname_ +
+            '/affect.AffiliateService/RefreshAffiliate', request, metadata || {}, this.methodInfoRefreshAffiliate);
     };
     return AffiliateServiceClient;
 }());

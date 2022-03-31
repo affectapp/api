@@ -121,5 +121,48 @@ export class AffiliateServiceClient {
     this.methodInfoGenerateAffiliateLink);
   }
 
+  methodInfoRefreshAffiliate = new grpcWeb.MethodDescriptor(
+    '/affect.AffiliateService/RefreshAffiliate',
+    grpcWeb.MethodType.UNARY,
+    affect_affiliate_pb.RefreshAffiliateRequest,
+    affect_affiliate_pb.Affiliate,
+    (request: affect_affiliate_pb.RefreshAffiliateRequest) => {
+      return request.serializeBinary();
+    },
+    affect_affiliate_pb.Affiliate.deserializeBinary
+  );
+
+  refreshAffiliate(
+    request: affect_affiliate_pb.RefreshAffiliateRequest,
+    metadata: grpcWeb.Metadata | null): Promise<affect_affiliate_pb.Affiliate>;
+
+  refreshAffiliate(
+    request: affect_affiliate_pb.RefreshAffiliateRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: affect_affiliate_pb.Affiliate) => void): grpcWeb.ClientReadableStream<affect_affiliate_pb.Affiliate>;
+
+  refreshAffiliate(
+    request: affect_affiliate_pb.RefreshAffiliateRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: affect_affiliate_pb.Affiliate) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/affect.AffiliateService/RefreshAffiliate',
+        request,
+        metadata || {},
+        this.methodInfoRefreshAffiliate,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/affect.AffiliateService/RefreshAffiliate',
+    request,
+    metadata || {},
+    this.methodInfoRefreshAffiliate);
+  }
+
 }
 
