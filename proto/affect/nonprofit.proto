@@ -22,9 +22,9 @@ message Nonprofit {
     string mission = 7;
     string category = 8;
 
-    // Optional. The affiliate information for the nonprofit. This is
+    // Optional. The id of the affiliate for the nonprofit. This is
     // only populated if the nonprofit is affiliated with Affect.
-    Affiliate affiliate = 9;
+    string affiliate_id = 9;
 }
 
 message GetNonprofitRequest {
