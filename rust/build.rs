@@ -8,6 +8,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "../proto/affect/account.proto",
         "../proto/affect/nonprofit.proto",
         "../proto/affect/cause.proto",
+        "../proto/affect/affiliate.proto",
         "../proto/affect/donation.proto",
         "../proto/google/type/money.proto",
     ];
