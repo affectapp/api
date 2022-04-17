@@ -9,7 +9,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../google/protobuf/timestamp.pb.dart' as $6;
+import '../google/protobuf/timestamp.pb.dart' as $7;
 
 import 'affiliate.pbenum.dart';
 
@@ -18,8 +18,8 @@ export 'affiliate.pbenum.dart';
 class Affiliate extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Affiliate', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'affiliateId')
-    ..aOM<$6.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $6.Timestamp.create)
-    ..aOM<$6.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $6.Timestamp.create)
+    ..aOM<$7.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $7.Timestamp.create)
+    ..aOM<$7.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $7.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'companyName')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contactEmail')
     ..e<BusinessType>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'businessType', $pb.PbFieldType.OE, defaultOrMaker: BusinessType.BUSINESS_TYPE_UNSPECIFIED, valueOf: BusinessType.valueOf, enumValues: BusinessType.values)
@@ -31,8 +31,8 @@ class Affiliate extends $pb.GeneratedMessage {
   Affiliate._() : super();
   factory Affiliate({
     $core.String? affiliateId,
-    $6.Timestamp? createTime,
-    $6.Timestamp? updateTime,
+    $7.Timestamp? createTime,
+    $7.Timestamp? updateTime,
     $core.String? companyName,
     $core.String? contactEmail,
     BusinessType? businessType,
@@ -97,26 +97,26 @@ class Affiliate extends $pb.GeneratedMessage {
   void clearAffiliateId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $6.Timestamp get createTime => $_getN(1);
+  $7.Timestamp get createTime => $_getN(1);
   @$pb.TagNumber(2)
-  set createTime($6.Timestamp v) { setField(2, v); }
+  set createTime($7.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreateTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreateTime() => clearField(2);
   @$pb.TagNumber(2)
-  $6.Timestamp ensureCreateTime() => $_ensure(1);
+  $7.Timestamp ensureCreateTime() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $6.Timestamp get updateTime => $_getN(2);
+  $7.Timestamp get updateTime => $_getN(2);
   @$pb.TagNumber(3)
-  set updateTime($6.Timestamp v) { setField(3, v); }
+  set updateTime($7.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUpdateTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearUpdateTime() => clearField(3);
   @$pb.TagNumber(3)
-  $6.Timestamp ensureUpdateTime() => $_ensure(2);
+  $7.Timestamp ensureUpdateTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get companyName => $_getSZ(3);
@@ -373,7 +373,7 @@ class AffiliateLink extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AffiliateLink', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
     ..e<AffiliateLinkType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'linkType', $pb.PbFieldType.OE, defaultOrMaker: AffiliateLinkType.AFFILIATE_LINK_TYPE_UNSPECIFIED, valueOf: AffiliateLinkType.valueOf, enumValues: AffiliateLinkType.values)
-    ..aOM<$6.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expireTime', subBuilder: $6.Timestamp.create)
+    ..aOM<$7.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expireTime', subBuilder: $7.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -381,7 +381,7 @@ class AffiliateLink extends $pb.GeneratedMessage {
   factory AffiliateLink({
     $core.String? url,
     AffiliateLinkType? linkType,
-    $6.Timestamp? expireTime,
+    $7.Timestamp? expireTime,
   }) {
     final _result = create();
     if (url != null) {
@@ -435,15 +435,15 @@ class AffiliateLink extends $pb.GeneratedMessage {
   void clearLinkType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $6.Timestamp get expireTime => $_getN(2);
+  $7.Timestamp get expireTime => $_getN(2);
   @$pb.TagNumber(3)
-  set expireTime($6.Timestamp v) { setField(3, v); }
+  set expireTime($7.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasExpireTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearExpireTime() => clearField(3);
   @$pb.TagNumber(3)
-  $6.Timestamp ensureExpireTime() => $_ensure(2);
+  $7.Timestamp ensureExpireTime() => $_ensure(2);
 }
 
 class RefreshAffiliateRequest extends $pb.GeneratedMessage {

@@ -10,45 +10,45 @@ import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
-import 'affiliate.pb.dart' as $0;
+import 'affiliate.pb.dart' as $6;
 export 'affiliate.pb.dart';
 
 class AffiliateServiceClient extends $grpc.Client {
   static final _$createAffiliate =
-      $grpc.ClientMethod<$0.CreateAffiliateRequest, $0.Affiliate>(
+      $grpc.ClientMethod<$6.CreateAffiliateRequest, $6.Affiliate>(
           '/affect.AffiliateService/CreateAffiliate',
-          ($0.CreateAffiliateRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.Affiliate.fromBuffer(value));
+          ($6.CreateAffiliateRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $6.Affiliate.fromBuffer(value));
   static final _$generateAffiliateLink =
-      $grpc.ClientMethod<$0.GenerateAffiliateLinkRequest, $0.AffiliateLink>(
+      $grpc.ClientMethod<$6.GenerateAffiliateLinkRequest, $6.AffiliateLink>(
           '/affect.AffiliateService/GenerateAffiliateLink',
-          ($0.GenerateAffiliateLinkRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.AffiliateLink.fromBuffer(value));
+          ($6.GenerateAffiliateLinkRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $6.AffiliateLink.fromBuffer(value));
   static final _$refreshAffiliate =
-      $grpc.ClientMethod<$0.RefreshAffiliateRequest, $0.Affiliate>(
+      $grpc.ClientMethod<$6.RefreshAffiliateRequest, $6.Affiliate>(
           '/affect.AffiliateService/RefreshAffiliate',
-          ($0.RefreshAffiliateRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.Affiliate.fromBuffer(value));
+          ($6.RefreshAffiliateRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $6.Affiliate.fromBuffer(value));
 
   AffiliateServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.Affiliate> createAffiliate(
-      $0.CreateAffiliateRequest request,
+  $grpc.ResponseFuture<$6.Affiliate> createAffiliate(
+      $6.CreateAffiliateRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createAffiliate, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.AffiliateLink> generateAffiliateLink(
-      $0.GenerateAffiliateLinkRequest request,
+  $grpc.ResponseFuture<$6.AffiliateLink> generateAffiliateLink(
+      $6.GenerateAffiliateLinkRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$generateAffiliateLink, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Affiliate> refreshAffiliate(
-      $0.RefreshAffiliateRequest request,
+  $grpc.ResponseFuture<$6.Affiliate> refreshAffiliate(
+      $6.RefreshAffiliateRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$refreshAffiliate, request, options: options);
   }
@@ -58,53 +58,53 @@ abstract class AffiliateServiceBase extends $grpc.Service {
   $core.String get $name => 'affect.AffiliateService';
 
   AffiliateServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateAffiliateRequest, $0.Affiliate>(
+    $addMethod($grpc.ServiceMethod<$6.CreateAffiliateRequest, $6.Affiliate>(
         'CreateAffiliate',
         createAffiliate_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $0.CreateAffiliateRequest.fromBuffer(value),
-        ($0.Affiliate value) => value.writeToBuffer()));
+            $6.CreateAffiliateRequest.fromBuffer(value),
+        ($6.Affiliate value) => value.writeToBuffer()));
     $addMethod(
-        $grpc.ServiceMethod<$0.GenerateAffiliateLinkRequest, $0.AffiliateLink>(
+        $grpc.ServiceMethod<$6.GenerateAffiliateLinkRequest, $6.AffiliateLink>(
             'GenerateAffiliateLink',
             generateAffiliateLink_Pre,
             false,
             false,
             ($core.List<$core.int> value) =>
-                $0.GenerateAffiliateLinkRequest.fromBuffer(value),
-            ($0.AffiliateLink value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.RefreshAffiliateRequest, $0.Affiliate>(
+                $6.GenerateAffiliateLinkRequest.fromBuffer(value),
+            ($6.AffiliateLink value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.RefreshAffiliateRequest, $6.Affiliate>(
         'RefreshAffiliate',
         refreshAffiliate_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $0.RefreshAffiliateRequest.fromBuffer(value),
-        ($0.Affiliate value) => value.writeToBuffer()));
+            $6.RefreshAffiliateRequest.fromBuffer(value),
+        ($6.Affiliate value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.Affiliate> createAffiliate_Pre($grpc.ServiceCall call,
-      $async.Future<$0.CreateAffiliateRequest> request) async {
+  $async.Future<$6.Affiliate> createAffiliate_Pre($grpc.ServiceCall call,
+      $async.Future<$6.CreateAffiliateRequest> request) async {
     return createAffiliate(call, await request);
   }
 
-  $async.Future<$0.AffiliateLink> generateAffiliateLink_Pre(
+  $async.Future<$6.AffiliateLink> generateAffiliateLink_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$0.GenerateAffiliateLinkRequest> request) async {
+      $async.Future<$6.GenerateAffiliateLinkRequest> request) async {
     return generateAffiliateLink(call, await request);
   }
 
-  $async.Future<$0.Affiliate> refreshAffiliate_Pre($grpc.ServiceCall call,
-      $async.Future<$0.RefreshAffiliateRequest> request) async {
+  $async.Future<$6.Affiliate> refreshAffiliate_Pre($grpc.ServiceCall call,
+      $async.Future<$6.RefreshAffiliateRequest> request) async {
     return refreshAffiliate(call, await request);
   }
 
-  $async.Future<$0.Affiliate> createAffiliate(
-      $grpc.ServiceCall call, $0.CreateAffiliateRequest request);
-  $async.Future<$0.AffiliateLink> generateAffiliateLink(
-      $grpc.ServiceCall call, $0.GenerateAffiliateLinkRequest request);
-  $async.Future<$0.Affiliate> refreshAffiliate(
-      $grpc.ServiceCall call, $0.RefreshAffiliateRequest request);
+  $async.Future<$6.Affiliate> createAffiliate(
+      $grpc.ServiceCall call, $6.CreateAffiliateRequest request);
+  $async.Future<$6.AffiliateLink> generateAffiliateLink(
+      $grpc.ServiceCall call, $6.GenerateAffiliateLinkRequest request);
+  $async.Future<$6.Affiliate> refreshAffiliate(
+      $grpc.ServiceCall call, $6.RefreshAffiliateRequest request);
 }

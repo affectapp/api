@@ -13,18 +13,10 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-var affect_affiliate_pb = require('../affect/affiliate_pb.js');
-goog.object.extend(proto, affect_affiliate_pb);
 goog.exportSymbol('proto.affect.GetNonprofitRequest', null, global);
 goog.exportSymbol('proto.affect.ListNonprofitsRequest', null, global);
 goog.exportSymbol('proto.affect.ListNonprofitsRequest.FilterBySearch', null, global);
@@ -176,7 +168,7 @@ proto.affect.Nonprofit.toObject = function(includeInstance, msg) {
     ein: jspb.Message.getFieldWithDefault(msg, 6, ""),
     mission: jspb.Message.getFieldWithDefault(msg, 7, ""),
     category: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    affiliate: (f = msg.getAffiliate()) && affect_affiliate_pb.Affiliate.toObject(includeInstance, f)
+    affiliateId: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -248,9 +240,8 @@ proto.affect.Nonprofit.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCategory(value);
       break;
     case 9:
-      var value = new affect_affiliate_pb.Affiliate;
-      reader.readMessage(value,affect_affiliate_pb.Affiliate.deserializeBinaryFromReader);
-      msg.setAffiliate(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAffiliateId(value);
       break;
     default:
       reader.skipField();
@@ -339,12 +330,11 @@ proto.affect.Nonprofit.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAffiliate();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getAffiliateId();
+  if (f.length > 0) {
+    writer.writeString(
       9,
-      f,
-      affect_affiliate_pb.Affiliate.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -533,39 +523,20 @@ proto.affect.Nonprofit.prototype.setCategory = function(value) {
 
 
 /**
- * optional Affiliate affiliate = 9;
- * @return {?proto.affect.Affiliate}
+ * optional string affiliate_id = 9;
+ * @return {string}
  */
-proto.affect.Nonprofit.prototype.getAffiliate = function() {
-  return /** @type{?proto.affect.Affiliate} */ (
-    jspb.Message.getWrapperField(this, affect_affiliate_pb.Affiliate, 9));
+proto.affect.Nonprofit.prototype.getAffiliateId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /**
- * @param {?proto.affect.Affiliate|undefined} value
- * @return {!proto.affect.Nonprofit} returns this
-*/
-proto.affect.Nonprofit.prototype.setAffiliate = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.affect.Nonprofit} returns this
  */
-proto.affect.Nonprofit.prototype.clearAffiliate = function() {
-  return this.setAffiliate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.affect.Nonprofit.prototype.hasAffiliate = function() {
-  return jspb.Message.getField(this, 9) != null;
+proto.affect.Nonprofit.prototype.setAffiliateId = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

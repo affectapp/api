@@ -10,26 +10,26 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../google/protobuf/timestamp.pb.dart' as $6;
-import 'account.pb.dart' as $7;
+import '../google/protobuf/timestamp.pb.dart' as $7;
+import 'account.pb.dart' as $9;
 
 class Item extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Item', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'itemId')
-    ..aOM<$6.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $6.Timestamp.create)
-    ..aOM<$6.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $6.Timestamp.create)
+    ..aOM<$7.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $7.Timestamp.create)
+    ..aOM<$7.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $7.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
-    ..pc<$7.Account>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accounts', $pb.PbFieldType.PM, subBuilder: $7.Account.create)
+    ..pc<$9.Account>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accounts', $pb.PbFieldType.PM, subBuilder: $9.Account.create)
     ..hasRequiredFields = false
   ;
 
   Item._() : super();
   factory Item({
     $core.String? itemId,
-    $6.Timestamp? createTime,
-    $6.Timestamp? updateTime,
+    $7.Timestamp? createTime,
+    $7.Timestamp? updateTime,
     $core.String? userId,
-    $core.Iterable<$7.Account>? accounts,
+    $core.Iterable<$9.Account>? accounts,
   }) {
     final _result = create();
     if (itemId != null) {
@@ -80,26 +80,26 @@ class Item extends $pb.GeneratedMessage {
   void clearItemId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $6.Timestamp get createTime => $_getN(1);
+  $7.Timestamp get createTime => $_getN(1);
   @$pb.TagNumber(2)
-  set createTime($6.Timestamp v) { setField(2, v); }
+  set createTime($7.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreateTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreateTime() => clearField(2);
   @$pb.TagNumber(2)
-  $6.Timestamp ensureCreateTime() => $_ensure(1);
+  $7.Timestamp ensureCreateTime() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $6.Timestamp get updateTime => $_getN(2);
+  $7.Timestamp get updateTime => $_getN(2);
   @$pb.TagNumber(3)
-  set updateTime($6.Timestamp v) { setField(3, v); }
+  set updateTime($7.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUpdateTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearUpdateTime() => clearField(3);
   @$pb.TagNumber(3)
-  $6.Timestamp ensureUpdateTime() => $_ensure(2);
+  $7.Timestamp ensureUpdateTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get userId => $_getSZ(3);
@@ -111,7 +111,7 @@ class Item extends $pb.GeneratedMessage {
   void clearUserId() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$7.Account> get accounts => $_getList(4);
+  $core.List<$9.Account> get accounts => $_getList(4);
 }
 
 class ListItemsRequest extends $pb.GeneratedMessage {
@@ -308,14 +308,14 @@ class GenerateLinkTokenRequest extends $pb.GeneratedMessage {
 class LinkToken extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LinkToken', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'plaidLinkToken')
-    ..aOM<$6.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expireTime', subBuilder: $6.Timestamp.create)
+    ..aOM<$7.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expireTime', subBuilder: $7.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
   LinkToken._() : super();
   factory LinkToken({
     $core.String? plaidLinkToken,
-    $6.Timestamp? expireTime,
+    $7.Timestamp? expireTime,
   }) {
     final _result = create();
     if (plaidLinkToken != null) {
@@ -357,15 +357,15 @@ class LinkToken extends $pb.GeneratedMessage {
   void clearPlaidLinkToken() => clearField(1);
 
   @$pb.TagNumber(3)
-  $6.Timestamp get expireTime => $_getN(1);
+  $7.Timestamp get expireTime => $_getN(1);
   @$pb.TagNumber(3)
-  set expireTime($6.Timestamp v) { setField(3, v); }
+  set expireTime($7.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasExpireTime() => $_has(1);
   @$pb.TagNumber(3)
   void clearExpireTime() => clearField(3);
   @$pb.TagNumber(3)
-  $6.Timestamp ensureExpireTime() => $_ensure(1);
+  $7.Timestamp ensureExpireTime() => $_ensure(1);
 }
 
 class CreateItemRequest extends $pb.GeneratedMessage {

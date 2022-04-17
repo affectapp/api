@@ -9,13 +9,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../google/protobuf/timestamp.pb.dart' as $6;
+import '../google/protobuf/timestamp.pb.dart' as $7;
 
 class Account extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Account', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountId')
-    ..aOM<$6.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $6.Timestamp.create)
-    ..aOM<$6.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $6.Timestamp.create)
+    ..aOM<$7.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $7.Timestamp.create)
+    ..aOM<$7.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $7.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'itemId')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mask')
@@ -25,8 +25,8 @@ class Account extends $pb.GeneratedMessage {
   Account._() : super();
   factory Account({
     $core.String? accountId,
-    $6.Timestamp? createTime,
-    $6.Timestamp? updateTime,
+    $7.Timestamp? createTime,
+    $7.Timestamp? updateTime,
     $core.String? itemId,
     $core.String? name,
     $core.String? mask,
@@ -83,26 +83,26 @@ class Account extends $pb.GeneratedMessage {
   void clearAccountId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $6.Timestamp get createTime => $_getN(1);
+  $7.Timestamp get createTime => $_getN(1);
   @$pb.TagNumber(2)
-  set createTime($6.Timestamp v) { setField(2, v); }
+  set createTime($7.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreateTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreateTime() => clearField(2);
   @$pb.TagNumber(2)
-  $6.Timestamp ensureCreateTime() => $_ensure(1);
+  $7.Timestamp ensureCreateTime() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $6.Timestamp get updateTime => $_getN(2);
+  $7.Timestamp get updateTime => $_getN(2);
   @$pb.TagNumber(3)
-  set updateTime($6.Timestamp v) { setField(3, v); }
+  set updateTime($7.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUpdateTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearUpdateTime() => clearField(3);
   @$pb.TagNumber(3)
-  $6.Timestamp ensureUpdateTime() => $_ensure(2);
+  $7.Timestamp ensureUpdateTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get itemId => $_getSZ(3);

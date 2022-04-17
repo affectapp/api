@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/type/money.proto";
+
+package affect;
+
+message Donation {
+    // The identifier of the entity.
+    string donation_id = 1;
+
+    // The create time of the entity.
+    google.protobuf.Timestamp create_time = 2;
+
+    // The update time of the entity.
+    google.protobuf.Timestamp update_time = 3;
+
+    // The nonprofit towards which this donation was directed.
+    string nonprofit_id = 4;
+
+    // The id of the user that created the donation. This user's
+    // bank account will be charged to fund the donation.
+    string user_id = 5;
+
+    // The amount of money donated to the nonprofit.
+    google.type.Money amount = 6;
+
+    // Optional. The cause towards which this donation was directed.
+    // Or none if there is no associated cause.
+    string cause_id = 7;
+
+    // The status of the donation. Donations will typically progress
+    // from "pending" to either "completed" or "failed".
+    oneof status {
+        DonationPendingStatus pending = 8;
+        DonationCompletedStatus completed = 9;
+        DonationFailedStatus failed = 10;
+    }
+}
+
+// Donation status which indicates that the user's account charge has
+// not yet completed.
+message DonationPendingStatus {
+    // Optional. The id of the affiliate that will directly receive 
+    // funds from the donation. This is unset if the nonprofit is unaffiliated,
+    // and will receive funds indirectly through periodic payouts from Affect.
+    string affiliate_id = 1;
+}
+
+// Donation status which indicates that the user's account has been charged
+// and the donation is completed.
+message DonationCompletedStatus {
+    // The id of the account used to fund the donation. This must belong 
+    // to an item linked to the donation's user.
+    string account_id = 1;
+
+    // The time at which the funds were charged from the account.
+    google.protobuf.Timestamp completion_time = 2;
+    
+    // Optional. The id of the affiliate that received funds from the donation. 
+    // This is unset if the nonprofit is unaffiliated.
+    string affiliate_id = 3;
+}
+
+// Donation status which indicates that the user was unable to be charged
+// due to some error or configuration issue.
+message DonationFailedStatus {
+    // The id of the account used to fund the donation. This must belong 
+    // to an item linked to the donation's user.
+    string account_id = 1;
+
+    // The time at which the funds were charged from the account.
+    google.protobuf.Timestamp failure_time = 2;
+
+    // The cause of the donation failure.
+    DonationFailureCause failure_cause = 3; 
+}
+
+enum DonationFailureCause {
+    DONATION_FAILURE_CAUSE_UNSPECIFIED = 0;
+}
+
+message CreateOneoffDonationRequest {
+    // The nonprofit towards which this donation was directed.
+    string nonprofit_id = 1;
+
+    // The id of the user that created the donation. This user's
+    // bank account will be charged to fund the donation.
+    string user_id = 2;
+
+    // The amount of money donated to the nonprofit.
+    google.type.Money amount = 3;
+}
+
+message GetDonationRequest {
+
+}
+
+service DonationService {
+    rpc CreateOneoffDonation(CreateOneoffDonationRequest) returns (Donation) {}
+
+    rpc GetDonation(GetDonationRequest) returns (Donation) {}
+}

@@ -10,34 +10,33 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../google/protobuf/timestamp.pb.dart' as $6;
-import 'affiliate.pb.dart' as $0;
+import '../google/protobuf/timestamp.pb.dart' as $7;
 
 class Nonprofit extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Nonprofit', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonprofitId')
-    ..aOM<$6.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $6.Timestamp.create)
-    ..aOM<$6.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $6.Timestamp.create)
+    ..aOM<$7.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $7.Timestamp.create)
+    ..aOM<$7.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $7.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'iconUrl')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ein')
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mission')
     ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'category')
-    ..aOM<$0.Affiliate>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'affiliate', subBuilder: $0.Affiliate.create)
+    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'affiliateId')
     ..hasRequiredFields = false
   ;
 
   Nonprofit._() : super();
   factory Nonprofit({
     $core.String? nonprofitId,
-    $6.Timestamp? createTime,
-    $6.Timestamp? updateTime,
+    $7.Timestamp? createTime,
+    $7.Timestamp? updateTime,
     $core.String? iconUrl,
     $core.String? name,
     $core.String? ein,
     $core.String? mission,
     $core.String? category,
-    $0.Affiliate? affiliate,
+    $core.String? affiliateId,
   }) {
     final _result = create();
     if (nonprofitId != null) {
@@ -64,8 +63,8 @@ class Nonprofit extends $pb.GeneratedMessage {
     if (category != null) {
       _result.category = category;
     }
-    if (affiliate != null) {
-      _result.affiliate = affiliate;
+    if (affiliateId != null) {
+      _result.affiliateId = affiliateId;
     }
     return _result;
   }
@@ -100,26 +99,26 @@ class Nonprofit extends $pb.GeneratedMessage {
   void clearNonprofitId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $6.Timestamp get createTime => $_getN(1);
+  $7.Timestamp get createTime => $_getN(1);
   @$pb.TagNumber(2)
-  set createTime($6.Timestamp v) { setField(2, v); }
+  set createTime($7.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreateTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreateTime() => clearField(2);
   @$pb.TagNumber(2)
-  $6.Timestamp ensureCreateTime() => $_ensure(1);
+  $7.Timestamp ensureCreateTime() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $6.Timestamp get updateTime => $_getN(2);
+  $7.Timestamp get updateTime => $_getN(2);
   @$pb.TagNumber(3)
-  set updateTime($6.Timestamp v) { setField(3, v); }
+  set updateTime($7.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUpdateTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearUpdateTime() => clearField(3);
   @$pb.TagNumber(3)
-  $6.Timestamp ensureUpdateTime() => $_ensure(2);
+  $7.Timestamp ensureUpdateTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get iconUrl => $_getSZ(3);
@@ -167,15 +166,13 @@ class Nonprofit extends $pb.GeneratedMessage {
   void clearCategory() => clearField(8);
 
   @$pb.TagNumber(9)
-  $0.Affiliate get affiliate => $_getN(8);
+  $core.String get affiliateId => $_getSZ(8);
   @$pb.TagNumber(9)
-  set affiliate($0.Affiliate v) { setField(9, v); }
+  set affiliateId($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasAffiliate() => $_has(8);
+  $core.bool hasAffiliateId() => $_has(8);
   @$pb.TagNumber(9)
-  void clearAffiliate() => clearField(9);
-  @$pb.TagNumber(9)
-  $0.Affiliate ensureAffiliate() => $_ensure(8);
+  void clearAffiliateId() => clearField(9);
 }
 
 class GetNonprofitRequest extends $pb.GeneratedMessage {

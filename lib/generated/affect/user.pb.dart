@@ -10,13 +10,13 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../google/protobuf/timestamp.pb.dart' as $6;
+import '../google/protobuf/timestamp.pb.dart' as $7;
 
 class User extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'User', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
-    ..aOM<$6.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $6.Timestamp.create)
-    ..aOM<$6.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $6.Timestamp.create)
+    ..aOM<$7.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $7.Timestamp.create)
+    ..aOM<$7.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $7.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firebaseUid')
     ..hasRequiredFields = false
   ;
@@ -24,8 +24,8 @@ class User extends $pb.GeneratedMessage {
   User._() : super();
   factory User({
     $core.String? userId,
-    $6.Timestamp? createTime,
-    $6.Timestamp? updateTime,
+    $7.Timestamp? createTime,
+    $7.Timestamp? updateTime,
     $core.String? firebaseUid,
   }) {
     final _result = create();
@@ -74,26 +74,26 @@ class User extends $pb.GeneratedMessage {
   void clearUserId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $6.Timestamp get createTime => $_getN(1);
+  $7.Timestamp get createTime => $_getN(1);
   @$pb.TagNumber(2)
-  set createTime($6.Timestamp v) { setField(2, v); }
+  set createTime($7.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreateTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreateTime() => clearField(2);
   @$pb.TagNumber(2)
-  $6.Timestamp ensureCreateTime() => $_ensure(1);
+  $7.Timestamp ensureCreateTime() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $6.Timestamp get updateTime => $_getN(2);
+  $7.Timestamp get updateTime => $_getN(2);
   @$pb.TagNumber(3)
-  set updateTime($6.Timestamp v) { setField(3, v); }
+  set updateTime($7.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUpdateTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearUpdateTime() => clearField(3);
   @$pb.TagNumber(3)
-  $6.Timestamp ensureUpdateTime() => $_ensure(2);
+  $7.Timestamp ensureUpdateTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get firebaseUid => $_getSZ(3);
