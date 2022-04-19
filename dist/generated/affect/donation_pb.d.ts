@@ -153,27 +153,27 @@ export namespace DonationFailedStatus {
   }
 }
 
-export class CreateOneoffDonationRequest extends jspb.Message {
+export class CreateDonationRequest extends jspb.Message {
   getNonprofitId(): string;
-  setNonprofitId(value: string): CreateOneoffDonationRequest;
+  setNonprofitId(value: string): CreateDonationRequest;
 
   getUserId(): string;
-  setUserId(value: string): CreateOneoffDonationRequest;
+  setUserId(value: string): CreateDonationRequest;
 
   getAmount(): google_type_money_pb.Money | undefined;
-  setAmount(value?: google_type_money_pb.Money): CreateOneoffDonationRequest;
+  setAmount(value?: google_type_money_pb.Money): CreateDonationRequest;
   hasAmount(): boolean;
-  clearAmount(): CreateOneoffDonationRequest;
+  clearAmount(): CreateDonationRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateOneoffDonationRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateOneoffDonationRequest): CreateOneoffDonationRequest.AsObject;
-  static serializeBinaryToWriter(message: CreateOneoffDonationRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateOneoffDonationRequest;
-  static deserializeBinaryFromReader(message: CreateOneoffDonationRequest, reader: jspb.BinaryReader): CreateOneoffDonationRequest;
+  toObject(includeInstance?: boolean): CreateDonationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDonationRequest): CreateDonationRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateDonationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDonationRequest;
+  static deserializeBinaryFromReader(message: CreateDonationRequest, reader: jspb.BinaryReader): CreateDonationRequest;
 }
 
-export namespace CreateOneoffDonationRequest {
+export namespace CreateDonationRequest {
   export type AsObject = {
     nonprofitId: string,
     userId: string,
@@ -182,6 +182,9 @@ export namespace CreateOneoffDonationRequest {
 }
 
 export class GetDonationRequest extends jspb.Message {
+  getNonprofitId(): string;
+  setNonprofitId(value: string): GetDonationRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDonationRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetDonationRequest): GetDonationRequest.AsObject;
@@ -192,6 +195,7 @@ export class GetDonationRequest extends jspb.Message {
 
 export namespace GetDonationRequest {
   export type AsObject = {
+    nonprofitId: string,
   }
 }
 

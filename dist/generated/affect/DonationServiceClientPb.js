@@ -13,7 +13,7 @@ var grpcWeb = require("grpc-web");
 var affect_donation_pb = require("../affect/donation_pb");
 var DonationServiceClient = /** @class */ (function () {
     function DonationServiceClient(hostname, credentials, options) {
-        this.methodInfoCreateOneoffDonation = new grpcWeb.MethodDescriptor('/affect.DonationService/CreateOneoffDonation', grpcWeb.MethodType.UNARY, affect_donation_pb.CreateOneoffDonationRequest, affect_donation_pb.Donation, function (request) {
+        this.methodInfoCreateDonation = new grpcWeb.MethodDescriptor('/affect.DonationService/CreateDonation', grpcWeb.MethodType.UNARY, affect_donation_pb.CreateDonationRequest, affect_donation_pb.Donation, function (request) {
             return request.serializeBinary();
         }, affect_donation_pb.Donation.deserializeBinary);
         this.methodInfoGetDonation = new grpcWeb.MethodDescriptor('/affect.DonationService/GetDonation', grpcWeb.MethodType.UNARY, affect_donation_pb.GetDonationRequest, affect_donation_pb.Donation, function (request) {
@@ -29,13 +29,13 @@ var DonationServiceClient = /** @class */ (function () {
         this.credentials_ = credentials;
         this.options_ = options;
     }
-    DonationServiceClient.prototype.createOneoffDonation = function (request, metadata, callback) {
+    DonationServiceClient.prototype.createDonation = function (request, metadata, callback) {
         if (callback !== undefined) {
             return this.client_.rpcCall(this.hostname_ +
-                '/affect.DonationService/CreateOneoffDonation', request, metadata || {}, this.methodInfoCreateOneoffDonation, callback);
+                '/affect.DonationService/CreateDonation', request, metadata || {}, this.methodInfoCreateDonation, callback);
         }
         return this.client_.unaryCall(this.hostname_ +
-            '/affect.DonationService/CreateOneoffDonation', request, metadata || {}, this.methodInfoCreateOneoffDonation);
+            '/affect.DonationService/CreateDonation', request, metadata || {}, this.methodInfoCreateDonation);
     };
     DonationServiceClient.prototype.getDonation = function (request, metadata, callback) {
         if (callback !== undefined) {

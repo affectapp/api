@@ -19,9 +19,9 @@ export declare class DonationServiceClient {
     }, options?: null | {
         [index: string]: any;
     });
-    methodInfoCreateOneoffDonation: grpcWeb.MethodDescriptor<affect_donation_pb.CreateOneoffDonationRequest, affect_donation_pb.Donation>;
-    createOneoffDonation(request: affect_donation_pb.CreateOneoffDonationRequest, metadata: grpcWeb.Metadata | null): Promise<affect_donation_pb.Donation>;
-    createOneoffDonation(request: affect_donation_pb.CreateOneoffDonationRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.RpcError, response: affect_donation_pb.Donation) => void): grpcWeb.ClientReadableStream<affect_donation_pb.Donation>;
+    methodInfoCreateDonation: grpcWeb.MethodDescriptor<affect_donation_pb.CreateDonationRequest, affect_donation_pb.Donation>;
+    createDonation(request: affect_donation_pb.CreateDonationRequest, metadata: grpcWeb.Metadata | null): Promise<affect_donation_pb.Donation>;
+    createDonation(request: affect_donation_pb.CreateDonationRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.RpcError, response: affect_donation_pb.Donation) => void): grpcWeb.ClientReadableStream<affect_donation_pb.Donation>;
     methodInfoGetDonation: grpcWeb.MethodDescriptor<affect_donation_pb.GetDonationRequest, affect_donation_pb.Donation>;
     getDonation(request: affect_donation_pb.GetDonationRequest, metadata: grpcWeb.Metadata | null): Promise<affect_donation_pb.Donation>;
     getDonation(request: affect_donation_pb.GetDonationRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.RpcError, response: affect_donation_pb.Donation) => void): grpcWeb.ClientReadableStream<affect_donation_pb.Donation>;

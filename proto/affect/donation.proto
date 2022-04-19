@@ -80,7 +80,7 @@ enum DonationFailureCause {
     DONATION_FAILURE_CAUSE_UNSPECIFIED = 0;
 }
 
-message CreateOneoffDonationRequest {
+message CreateDonationRequest {
     // The nonprofit towards which this donation was directed.
     string nonprofit_id = 1;
 
@@ -93,11 +93,14 @@ message CreateOneoffDonationRequest {
 }
 
 message GetDonationRequest {
-
+    // The id of the nonprofit to retrieve.
+    string nonprofit_id = 1;
 }
 
 service DonationService {
-    rpc CreateOneoffDonation(CreateOneoffDonationRequest) returns (Donation) {}
+    // Creates a one-off donation to a nonprofit.
+    rpc CreateDonation(CreateDonationRequest) returns (Donation) {}
 
+    // Retrieves a single donation.
     rpc GetDonation(GetDonationRequest) returns (Donation) {}
 }

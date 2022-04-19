@@ -74,9 +74,9 @@ const DonationFailedStatus$json = const {
 
 /// Descriptor for `DonationFailedStatus`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List donationFailedStatusDescriptor = $convert.base64Decode('ChREb25hdGlvbkZhaWxlZFN0YXR1cxIdCgphY2NvdW50X2lkGAEgASgJUglhY2NvdW50SWQSPQoMZmFpbHVyZV90aW1lGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILZmFpbHVyZVRpbWUSQQoNZmFpbHVyZV9jYXVzZRgDIAEoDjIcLmFmZmVjdC5Eb25hdGlvbkZhaWx1cmVDYXVzZVIMZmFpbHVyZUNhdXNl');
-@$core.Deprecated('Use createOneoffDonationRequestDescriptor instead')
-const CreateOneoffDonationRequest$json = const {
-  '1': 'CreateOneoffDonationRequest',
+@$core.Deprecated('Use createDonationRequestDescriptor instead')
+const CreateDonationRequest$json = const {
+  '1': 'CreateDonationRequest',
   '2': const [
     const {'1': 'nonprofit_id', '3': 1, '4': 1, '5': 9, '10': 'nonprofitId'},
     const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
@@ -84,12 +84,15 @@ const CreateOneoffDonationRequest$json = const {
   ],
 };
 
-/// Descriptor for `CreateOneoffDonationRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createOneoffDonationRequestDescriptor = $convert.base64Decode('ChtDcmVhdGVPbmVvZmZEb25hdGlvblJlcXVlc3QSIQoMbm9ucHJvZml0X2lkGAEgASgJUgtub25wcm9maXRJZBIXCgd1c2VyX2lkGAIgASgJUgZ1c2VySWQSKgoGYW1vdW50GAMgASgLMhIuZ29vZ2xlLnR5cGUuTW9uZXlSBmFtb3VudA==');
+/// Descriptor for `CreateDonationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDonationRequestDescriptor = $convert.base64Decode('ChVDcmVhdGVEb25hdGlvblJlcXVlc3QSIQoMbm9ucHJvZml0X2lkGAEgASgJUgtub25wcm9maXRJZBIXCgd1c2VyX2lkGAIgASgJUgZ1c2VySWQSKgoGYW1vdW50GAMgASgLMhIuZ29vZ2xlLnR5cGUuTW9uZXlSBmFtb3VudA==');
 @$core.Deprecated('Use getDonationRequestDescriptor instead')
 const GetDonationRequest$json = const {
   '1': 'GetDonationRequest',
+  '2': const [
+    const {'1': 'nonprofit_id', '3': 1, '4': 1, '5': 9, '10': 'nonprofitId'},
+  ],
 };
 
 /// Descriptor for `GetDonationRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getDonationRequestDescriptor = $convert.base64Decode('ChJHZXREb25hdGlvblJlcXVlc3Q=');
+final $typed_data.Uint8List getDonationRequestDescriptor = $convert.base64Decode('ChJHZXREb25hdGlvblJlcXVlc3QSIQoMbm9ucHJvZml0X2lkGAEgASgJUgtub25wcm9maXRJZA==');

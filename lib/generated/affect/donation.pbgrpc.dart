@@ -14,10 +14,10 @@ import 'donation.pb.dart' as $3;
 export 'donation.pb.dart';
 
 class DonationServiceClient extends $grpc.Client {
-  static final _$createOneoffDonation =
-      $grpc.ClientMethod<$3.CreateOneoffDonationRequest, $3.Donation>(
-          '/affect.DonationService/CreateOneoffDonation',
-          ($3.CreateOneoffDonationRequest value) => value.writeToBuffer(),
+  static final _$createDonation =
+      $grpc.ClientMethod<$3.CreateDonationRequest, $3.Donation>(
+          '/affect.DonationService/CreateDonation',
+          ($3.CreateDonationRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $3.Donation.fromBuffer(value));
   static final _$getDonation =
       $grpc.ClientMethod<$3.GetDonationRequest, $3.Donation>(
@@ -30,10 +30,10 @@ class DonationServiceClient extends $grpc.Client {
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseFuture<$3.Donation> createOneoffDonation(
-      $3.CreateOneoffDonationRequest request,
+  $grpc.ResponseFuture<$3.Donation> createDonation(
+      $3.CreateDonationRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createOneoffDonation, request, options: options);
+    return $createUnaryCall(_$createDonation, request, options: options);
   }
 
   $grpc.ResponseFuture<$3.Donation> getDonation($3.GetDonationRequest request,
@@ -46,13 +46,13 @@ abstract class DonationServiceBase extends $grpc.Service {
   $core.String get $name => 'affect.DonationService';
 
   DonationServiceBase() {
-    $addMethod($grpc.ServiceMethod<$3.CreateOneoffDonationRequest, $3.Donation>(
-        'CreateOneoffDonation',
-        createOneoffDonation_Pre,
+    $addMethod($grpc.ServiceMethod<$3.CreateDonationRequest, $3.Donation>(
+        'CreateDonation',
+        createDonation_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $3.CreateOneoffDonationRequest.fromBuffer(value),
+            $3.CreateDonationRequest.fromBuffer(value),
         ($3.Donation value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$3.GetDonationRequest, $3.Donation>(
         'GetDonation',
@@ -64,9 +64,9 @@ abstract class DonationServiceBase extends $grpc.Service {
         ($3.Donation value) => value.writeToBuffer()));
   }
 
-  $async.Future<$3.Donation> createOneoffDonation_Pre($grpc.ServiceCall call,
-      $async.Future<$3.CreateOneoffDonationRequest> request) async {
-    return createOneoffDonation(call, await request);
+  $async.Future<$3.Donation> createDonation_Pre($grpc.ServiceCall call,
+      $async.Future<$3.CreateDonationRequest> request) async {
+    return createDonation(call, await request);
   }
 
   $async.Future<$3.Donation> getDonation_Pre($grpc.ServiceCall call,
@@ -74,8 +74,8 @@ abstract class DonationServiceBase extends $grpc.Service {
     return getDonation(call, await request);
   }
 
-  $async.Future<$3.Donation> createOneoffDonation(
-      $grpc.ServiceCall call, $3.CreateOneoffDonationRequest request);
+  $async.Future<$3.Donation> createDonation(
+      $grpc.ServiceCall call, $3.CreateDonationRequest request);
   $async.Future<$3.Donation> getDonation(
       $grpc.ServiceCall call, $3.GetDonationRequest request);
 }

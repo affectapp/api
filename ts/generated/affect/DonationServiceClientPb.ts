@@ -35,47 +35,47 @@ export class DonationServiceClient {
     this.options_ = options;
   }
 
-  methodInfoCreateOneoffDonation = new grpcWeb.MethodDescriptor(
-    '/affect.DonationService/CreateOneoffDonation',
+  methodInfoCreateDonation = new grpcWeb.MethodDescriptor(
+    '/affect.DonationService/CreateDonation',
     grpcWeb.MethodType.UNARY,
-    affect_donation_pb.CreateOneoffDonationRequest,
+    affect_donation_pb.CreateDonationRequest,
     affect_donation_pb.Donation,
-    (request: affect_donation_pb.CreateOneoffDonationRequest) => {
+    (request: affect_donation_pb.CreateDonationRequest) => {
       return request.serializeBinary();
     },
     affect_donation_pb.Donation.deserializeBinary
   );
 
-  createOneoffDonation(
-    request: affect_donation_pb.CreateOneoffDonationRequest,
+  createDonation(
+    request: affect_donation_pb.CreateDonationRequest,
     metadata: grpcWeb.Metadata | null): Promise<affect_donation_pb.Donation>;
 
-  createOneoffDonation(
-    request: affect_donation_pb.CreateOneoffDonationRequest,
+  createDonation(
+    request: affect_donation_pb.CreateDonationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: affect_donation_pb.Donation) => void): grpcWeb.ClientReadableStream<affect_donation_pb.Donation>;
 
-  createOneoffDonation(
-    request: affect_donation_pb.CreateOneoffDonationRequest,
+  createDonation(
+    request: affect_donation_pb.CreateDonationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: affect_donation_pb.Donation) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/affect.DonationService/CreateOneoffDonation',
+          '/affect.DonationService/CreateDonation',
         request,
         metadata || {},
-        this.methodInfoCreateOneoffDonation,
+        this.methodInfoCreateDonation,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/affect.DonationService/CreateOneoffDonation',
+      '/affect.DonationService/CreateDonation',
     request,
     metadata || {},
-    this.methodInfoCreateOneoffDonation);
+    this.methodInfoCreateDonation);
   }
 
   methodInfoGetDonation = new grpcWeb.MethodDescriptor(

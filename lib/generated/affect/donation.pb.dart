@@ -419,16 +419,16 @@ class DonationFailedStatus extends $pb.GeneratedMessage {
   void clearFailureCause() => clearField(3);
 }
 
-class CreateOneoffDonationRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateOneoffDonationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
+class CreateDonationRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateDonationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonprofitId')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..aOM<$8.Money>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', subBuilder: $8.Money.create)
     ..hasRequiredFields = false
   ;
 
-  CreateOneoffDonationRequest._() : super();
-  factory CreateOneoffDonationRequest({
+  CreateDonationRequest._() : super();
+  factory CreateDonationRequest({
     $core.String? nonprofitId,
     $core.String? userId,
     $8.Money? amount,
@@ -445,26 +445,26 @@ class CreateOneoffDonationRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory CreateOneoffDonationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateOneoffDonationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory CreateDonationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateDonationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  CreateOneoffDonationRequest clone() => CreateOneoffDonationRequest()..mergeFromMessage(this);
+  CreateDonationRequest clone() => CreateDonationRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateOneoffDonationRequest copyWith(void Function(CreateOneoffDonationRequest) updates) => super.copyWith((message) => updates(message as CreateOneoffDonationRequest)) as CreateOneoffDonationRequest; // ignore: deprecated_member_use
+  CreateDonationRequest copyWith(void Function(CreateDonationRequest) updates) => super.copyWith((message) => updates(message as CreateDonationRequest)) as CreateDonationRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static CreateOneoffDonationRequest create() => CreateOneoffDonationRequest._();
-  CreateOneoffDonationRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateOneoffDonationRequest> createRepeated() => $pb.PbList<CreateOneoffDonationRequest>();
+  static CreateDonationRequest create() => CreateDonationRequest._();
+  CreateDonationRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateDonationRequest> createRepeated() => $pb.PbList<CreateDonationRequest>();
   @$core.pragma('dart2js:noInline')
-  static CreateOneoffDonationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateOneoffDonationRequest>(create);
-  static CreateOneoffDonationRequest? _defaultInstance;
+  static CreateDonationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateDonationRequest>(create);
+  static CreateDonationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get nonprofitId => $_getSZ(0);
@@ -498,11 +498,20 @@ class CreateOneoffDonationRequest extends $pb.GeneratedMessage {
 
 class GetDonationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetDonationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'affect'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonprofitId')
     ..hasRequiredFields = false
   ;
 
   GetDonationRequest._() : super();
-  factory GetDonationRequest() => create();
+  factory GetDonationRequest({
+    $core.String? nonprofitId,
+  }) {
+    final _result = create();
+    if (nonprofitId != null) {
+      _result.nonprofitId = nonprofitId;
+    }
+    return _result;
+  }
   factory GetDonationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetDonationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -523,5 +532,14 @@ class GetDonationRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static GetDonationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDonationRequest>(create);
   static GetDonationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get nonprofitId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set nonprofitId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasNonprofitId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNonprofitId() => clearField(1);
 }
 
